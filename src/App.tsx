@@ -177,7 +177,7 @@ function App() {
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-md">
         <div className="container mx-auto px-4 flex items-center justify-between h-16">
           <a href="#" className="font-bold text-xl text-blue-700 tracking-wide">
-            Twin Transition Hub
+            Twin Transition Challenge
           </a>
           <ul className="hidden md:flex space-x-6 font-medium text-gray-700">
             <li>
@@ -185,7 +185,7 @@ function App() {
                 href="#about"
                 className="hover:text-blue-600 transition-colors"
               >
-                Giới thiệu
+                About
               </a>
             </li>
             <li>
@@ -193,7 +193,7 @@ function App() {
                 href="#why-join"
                 className="hover:text-blue-600 transition-colors"
               >
-                Bối cảnh & Thách thức
+                Context & Challenges
               </a>
             </li>
             <li>
@@ -201,7 +201,7 @@ function App() {
                 href="#challenge-section"
                 className="hover:text-blue-600 transition-colors"
               >
-                Sân chơi
+                Playground
               </a>
             </li>
             <li>
@@ -209,7 +209,7 @@ function App() {
                 href="#timeline-section"
                 className="hover:text-blue-600 transition-colors"
               >
-                Lịch trình
+                Timeline
               </a>
             </li>
             <li>
@@ -217,7 +217,7 @@ function App() {
                 href="#how-to-join"
                 className="hover:text-blue-600 transition-colors"
               >
-                Cách tham gia
+                How to Join
               </a>
             </li>
             <li>
@@ -225,7 +225,7 @@ function App() {
                 href="#events-section"
                 className="hover:text-blue-600 transition-colors"
               >
-                Sự kiện
+                Events
               </a>
             </li>
             <li>
@@ -233,7 +233,7 @@ function App() {
                 href="#prizes-section"
                 className="hover:text-blue-600 transition-colors"
               >
-                Giải thưởng
+                Prizes
               </a>
             </li>
             <li>
@@ -241,15 +241,15 @@ function App() {
                 href="#partners-section"
                 className="hover:text-blue-600 transition-colors"
               >
-                Đối tác
+                Partners
               </a>
             </li>
             <li>
               <a
                 href="#register"
-                className="hover:text-green-600 font-semibold transition-colors"
+                className="bg-green-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-green-700 hover:shadow-lg transition-transform transform hover:scale-105 font-semibold"
               >
-                Đăng ký
+                Register
               </a>
             </li>
           </ul>
@@ -356,7 +356,7 @@ function App() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Về Dự án Twin Transition Hub
+                Về Dự án Twin Transition Challenge
               </h2>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 Dự án được thực hiện bởi Bộ Tài chính Việt Nam và GIZ, nhằm hỗ
@@ -542,7 +542,7 @@ function App() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+      <section id="timeline-section" className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
