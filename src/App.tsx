@@ -546,7 +546,9 @@ function App() {
                   {/* Số thứ tự với gradient và bóng */}
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl text-white z-10 flex-shrink-0 shadow-lg transition-transform duration-300 ${item.status === 'active'
                     ? 'bg-gradient-to-tr from-blue-600 to-blue-400 group-hover:scale-110'
-                    : 'bg-gray-300'
+                    : item.status === 'completed'
+                      ? 'bg-gradient-to-tr from-green-600 to-green-400 group-hover:scale-110'
+                      : 'bg-gray-300'
                     }`}>
                     {item.status === 'completed' ? (
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
