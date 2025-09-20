@@ -1,4 +1,5 @@
 import { Target, TrendingUp, Award, Gift, Users, Globe, Star } from "lucide-react";
+import images from "../assets";
 
 export const challenges = [
   {
@@ -98,18 +99,18 @@ export const rawTimeline = [
   {
     phase: "Giai đoạn 1",
     title: "Application & Scouting SMEs",
-    date: "17/9/2025",
+    date: "24/09/2025 - 04/10/2025",
     description: "Đăng ký tham gia và sàng lọc doanh nghiệp",
   },
   {
     phase: "Giai đoạn 2",
     title: "Tuyển chọn & Mentoring",
-    date: "06/10/2025 - 15/10/2025",
+    date: "05/10/2025 - 20/10/2025",
     description: "Lựa chọn SMEs và hướng dẫn chuyên sâu",
   },
   {
     phase: "Giai đoạn 3",
-    title: "Growth Forum & Pitching",
+    title: "Pitching Competition",
     date: "22/10/2025",
     description: "Diễn đàn phát triển và cuộc thi thuyết trình",
   },
@@ -122,7 +123,7 @@ export const rawTimeline = [
 ];
 
 export const industries = [
-  { value: "food-processing", label: "Chế biến nông sản" },
-  { value: "textile", label: "Dệt may" },
-  { value: "wood-paper", label: "Gỗ và giấy" },
+  { value: "food-processing", label: "Chế biến nông sản", image: images.agri },
+  { value: "textile", label: "Dệt may", image: images.silk },
+  { value: "wood-paper", label: "Gỗ và giấy", image: images.wood },
 ];
