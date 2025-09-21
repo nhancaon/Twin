@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import images from "./assets";
-import { challenges, benefits, prizes, faqs, rawTimeline, industries } from "./data/constants";
+import { prizes, faqs, rawTimeline, industries } from "./data/constants";
 import { Fade, Slide } from "react-awesome-reveal";
 import {
   ChevronRight,
@@ -34,43 +34,7 @@ interface FormData {
 }
 
 function App() {
-  const [formData, setFormData] = useState<FormData>({
-    companyName: "",
-    contactName: "",
-    email: "",
-    phone: "",
-    industry: "",
-    employeeCount: "",
-    businessDescription: "",
-    currentChallenges: "",
-    twinTransitionIdeas: "",
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-
-  const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    setIsSubmitted(true);
-    setIsSubmitting(false);
-  };
 
   const getTimelineStatus = (dateString: string) => {
     const currentDate = new Date();
@@ -136,42 +100,6 @@ function App() {
     status: getTimelineStatus(item.date),
   }));
 
-  if (isSubmitted) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-green-50 to-purple-50 flex items-center justify-center">
-        <div className="max-w-md mx-auto text-center p-8 bg-white rounded-2xl shadow-xl">
-          <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            Đăng ký thành công!
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Cảm ơn bạn đã đăng ký tham gia Twin Transition Challenge. Chúng tôi
-            sẽ liên hệ với bạn trong vòng 48 giờ tới.
-          </p>
-          <button
-            onClick={() => {
-              setIsSubmitted(false);
-              setFormData({
-                companyName: "",
-                contactName: "",
-                email: "",
-                phone: "",
-                industry: "",
-                employeeCount: "",
-                businessDescription: "",
-                currentChallenges: "",
-                twinTransitionIdeas: "",
-              });
-            }}
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Đăng ký thêm doanh nghiệp
-          </button>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation Menu */}
@@ -189,14 +117,7 @@ function App() {
                 About
               </a>
             </li>
-            <li>
-              <a
-                href="#why-join"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Context & Challenges
-              </a>
-            </li>
+
             <li>
               <a
                 href="#challenge-section"
@@ -211,14 +132,6 @@ function App() {
                 className="hover:text-blue-600 transition-colors"
               >
                 Timeline
-              </a>
-            </li>
-            <li>
-              <a
-                href="#how-to-join"
-                className="hover:text-blue-600 transition-colors"
-              >
-                How to Join
               </a>
             </li>
             <li>
@@ -375,48 +288,47 @@ function App() {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  Về Dự án Twin Transition Challenge
+                  Về Chương trình Twin Transition Challenge
                 </h2>
                 <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                  Dự án được thực hiện bởi Bộ Tài chính Việt Nam và GIZ, nhằm hỗ
-                  trợ SMEs Việt Nam trong hành trình chuyển đổi số song hành với
-                  phát triển bền vững.
+                  Đồng hành cùng doanh nghiệp nhỏ và vừa Việt Nam kiến tạo tương lai xanh - số hóa hướng tới tăng trưởng bền vững và bao trùm.
                 </p>
               </div>
 
-              <div className="grid lg:grid-cols-3 gap-8 mb-16">
+              <div className="grid lg:grid-cols-2 gap-8 mb-16">
                 <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                   <Target className="w-12 h-12 text-blue-500 mb-6" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     Mục tiêu
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Tạo ra một hệ sinh thái hỗ trợ SMEs trong việc áp dụng công
-                    nghệ số và thực hành bền vững, góp phần vào sự phát triển kinh
-                    tế xanh của Việt Nam.
+                    Chương trình hướng tới việc hỗ trợ SMEs <b>tư duy chiến lược, nâng cao năng lực cạnh tranh</b> và kiến tạo những sáng kiến chuyển đổi kép – vừa xanh, vừa số – đồng thời gắn kết với các giá trị bình đẳng giới và tăng trưởng bao trùm.
                   </p>
                 </div>
 
                 <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                   <Users className="w-12 h-12 text-green-500 mb-6" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Đối tác
+                    Đối tượng
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Hợp tác chiến lược giữa Bộ Tài chính Việt Nam, GIZ và Bộ Hợp
-                    tác Kinh tế và Phát triển Liên bang Đức (BMZ).
+                  <p className="text-gray-600 leading-relaxed mb-2">
+                    Để tham gia chương trình, các doanh nghiệp Việt Nam cần đáp ứng các tiêu chí sau đây:
                   </p>
-                </div>
-
-                <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                  <Globe className="w-12 h-12 text-purple-500 mb-6" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Ý nghĩa
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Liên kết với các chương trình chiến lược quốc gia về chuyển
-                    đổi số, phát triển nông nghiệp bền vững và bảo vệ môi trường.
-                  </p>
+                  <ul className="text-gray-600 mt-auto space-y-2">
+                    <li className="flex items-start leading-tight">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 self-start" />
+                      Doanh nghiệp là doanh nghiệp nhỏ và vừa thuộc 3 lĩnh vực Chế biến nông sản,
+                      dệt may, chế biến gỗ &amp; giấy.
+                    </li>
+                    <li className="flex items-start leading-tight">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 self-start" />
+                      Doanh nghiệp có sáng kiến về chuyển đổi số và chuyển đổi xanh đang hoặc đã triển khai.
+                    </li>
+                    <li className="flex items-start leading-tight">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 self-start" />
+                      Ít nhất một thành viên tham dự làm việc tại Việt Nam.
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -428,75 +340,6 @@ function App() {
                 <div className="relative bg-gradient-to-r from-blue-500 to-green-500 rounded-xl p-16">
                   <Play className="w-20 h-20 text-white mx-auto mb-4" />
                   <p className="text-white text-lg">Video sẽ được cập nhật sớm</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </Fade>
-
-      {/* Context & Challenges Section */}
-      <Fade triggerOnce>
-        <section id="why-join" className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  Bối cảnh & Thách thức
-                </h2>
-                <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-                  SMEs Việt Nam đang đối mặt với nhiều thách thức trong bối cảnh
-                  chuyển đổi số và yêu cầu phát triển bền vững ngày càng cao.
-                </p>
-              </div>
-
-              <div className="grid lg:grid-cols-2 gap-12 mb-16">
-                {challenges.map((challenge, index) => (
-                  <section
-                    key={index}
-                    className={`p-8 rounded-2xl border-2 border-gray-200 shadow-md transition-transform transform hover:scale-105 ${challenge.color}`}
-                    aria-labelledby={`challenge-title-${index}`}
-                  >
-                    <h3
-                      id={`challenge-title-${index}`}
-                      className="text-2xl font-extrabold mb-6 text-gray-900"
-                    >
-                      {challenge.title}
-                    </h3>
-                    <ul className="space-y-4">
-                      {challenge.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-center text-gray-700">
-                          <span
-                            className={`w-3 h-3 rounded-full mr-4 ${index === 0 ? "bg-red-500" : "bg-green-500"
-                              }`}
-                            aria-hidden="true"
-                          ></span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
-                ))}
-              </div>
-
-              <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                  Cơ hội từ Twin Transition
-                </h3>
-                <div className="grid md:grid-cols-3 gap-6">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="text-center transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                      <div className="flex justify-center mb-4">
-                        {benefit.icon}
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">
-                        {benefit.title}
-                      </h4>
-                      <p className="text-gray-600 text-sm">
-                        {benefit.description}
-                      </p>
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>
@@ -659,98 +502,6 @@ function App() {
         </section>
       </Fade>
 
-      {/* How to Join Section */}
-      <Fade triggerOnce>
-        <section id="how-to-join" className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  Cách thức tham gia
-                </h2>
-                <p className="text-xl text-gray-600">
-                  Quy trình đơn giản và minh bạch cho tất cả SMEs đủ điều kiện
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-4 gap-8 mb-16">
-                {[
-                  {
-                    step: "1",
-                    title: "Đăng ký",
-                    desc: "Hoàn thành form đăng ký online",
-                  },
-                  {
-                    step: "2",
-                    title: "Nộp ý tưởng",
-                    desc: "Trình bày ý tưởng Twin Transition",
-                  },
-                  {
-                    step: "3",
-                    title: "Mentoring",
-                    desc: "Nhận hướng dẫn từ chuyên gia",
-                  },
-                  {
-                    step: "4",
-                    title: "Pitching",
-                    desc: "Thuyết trình tại sự kiện chính",
-                  },
-                ].map((item, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                      {item.step}
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600">{item.desc}</p>
-                    {index < 3 && (
-                      <ArrowRight className="w-6 h-6 text-gray-400 mx-auto mt-4 hidden md:block" />
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-blue-50 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Yêu cầu đối tượng tham gia
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <ul className="space-y-3">
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                      SMEs hoạt động trong 3 lĩnh vực trọng điểm
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                      Quy mô từ 10-200 nhân viên
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                      Đã hoạt động ít nhất 2 năm
-                    </li>
-                  </ul>
-                  <ul className="space-y-3">
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                      Có ý tưởng cụ thể về Twin Transition
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                      Cam kết tham gia đầy đủ chương trình
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                      Có tiềm năng phát triển và mở rộng
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </Fade>
-
       {/* Events Section */}
       <Fade triggerOnce>
         <section id="events-section" className="py-20 bg-white">
@@ -771,20 +522,14 @@ function App() {
                     <Globe className="w-12 h-12 text-blue-600 mr-4" />
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900">
-                        Growth Forum
+                        Twin Transition Growth Forum
                       </h3>
                       <p className="text-blue-600">Buổi sáng - 22/10/2025</p>
                     </div>
                   </div>
                   <p className="text-gray-700 mb-6">
-                    Diễn đàn chia sẻ kinh nghiệm và xu hướng Twin Transition từ
-                    các chuyên gia trong nước và quốc tế.
+                    Một diễn đàn đa bên với sự tham gia của doanh nghiệp, chuyên gia, nhà đầu tư. Doanh nghiệp sẽ có cơ hội cập nhật xu hướng, học hỏi kinh nghiệm thực tiễn, kết nối và tìm kiếm cơ hội hợp tác.
                   </p>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• Keynote từ lãnh đạo Bộ Tài chính</li>
-                    <li>• Panel discussion với chuyên gia GIZ</li>
-                    <li>• Case studies thành công</li>
-                  </ul>
                 </div>
 
                 <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl">
@@ -792,55 +537,14 @@ function App() {
                     <Trophy className="w-12 h-12 text-green-600 mr-4" />
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900">
-                        Pitching Competition
+                        Chung kết thuyết trình trước Hội đồng đánh giá
                       </h3>
                       <p className="text-green-600">Buổi chiều - 22/10/2025</p>
                     </div>
                   </div>
                   <p className="text-gray-700 mb-6">
-                    Cuộc thi thuyết trình chính thức nơi các SMEs trình bày ý
-                    tưởng Twin Transition của mình.
+                    Các doanh nghiệp sẽ trình bày dự án chuyển đổi kép trước hội đồng giám khảo và khán giả.
                   </p>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• Thuyết trình 10 phút + Q&A 5 phút</li>
-                    <li>• Đánh giá bởi hội đồng chuyên gia</li>
-                    <li>• Trao giải và networking</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                  Khách mời và Ban giám khảo
-                </h3>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Building className="w-8 h-8 text-white" />
-                    </div>
-                    <h4 className="font-bold text-gray-900">
-                      Lãnh đạo Bộ Tài chính
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Chính sách và định hướng
-                    </p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Globe className="w-8 h-8 text-white" />
-                    </div>
-                    <h4 className="font-bold text-gray-900">Chuyên gia GIZ</h4>
-                    <p className="text-gray-600 text-sm">Kinh nghiệm quốc tế</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-8 h-8 text-white" />
-                    </div>
-                    <h4 className="font-bold text-gray-900">
-                      Nhà đầu tư & Đối tác
-                    </h4>
-                    <p className="text-gray-600 text-sm">Cơ hội hợp tác</p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -882,33 +586,11 @@ function App() {
                 <h3 className="text-2xl font-bold text-center mb-8">
                   Lợi ích cho tất cả SMEs tham gia
                 </h3>
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-1 gap-8">
                   <ul className="space-y-3">
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Networking với cộng đồng SMEs tiên phong
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Kiến thức chuyên sâu về Twin Transition
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Chứng nhận tham gia chương trình
-                    </li>
-                  </ul>
-                  <ul className="space-y-3">
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Cơ hội kết nối với nhà đầu tư
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Hỗ trợ truyền thông và PR
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Tham gia cộng đồng Twin Transition Hub
+                      Kết nối & tư vấn trực tiếp với các chuyên gia hàng đầu trong lĩnh vực xanh & số hóa, mở rộng mạng lưới đối tác và cơ hội hợp tác lâu dài
                     </li>
                   </ul>
                 </div>
@@ -1005,27 +687,19 @@ function App() {
                   </button>
                   {openFAQ === index && (
                     <div className="px-8 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
+                      <p className="mb-4">{faq.intro}</p>
+                      {faq.answer && (
+                        <ul className="list-disc list-inside space-y-2">
+                          {faq.answer.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   )}
                 </div>
               ))}
             </div>
-
-            {/* <div className="text-center mt-12">
-              <p className="text-gray-600 mb-4">Còn câu hỏi khác?</p>
-              <button className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                <Mail className="w-5 h-5 mr-2" />
-                <a
-                  href="#contact"
-                  className="text-white hover:text-white transition-colors"
-                >
-                  Liên hệ với chúng tôi
-                </a>
-              </button>
-            </div> */}
           </div>
         </div>
       </section>
@@ -1043,241 +717,6 @@ function App() {
           title="Twin Transition Challenge Registration Form"
         ></iframe>
       </section>
-
-
-      {/* Registration Form Section */}
-      {/* <section
-        id="register"
-        className="py-20 bg-gradient-to-r from-blue-600 to-green-600"
-      >
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Đăng ký tham gia Twin Transition Challenge
-              </h2>
-              <p className="text-xl text-blue-100">
-                Hoàn thành form dưới đây để tham gia thử thách và nhận hỗ trợ từ
-                chuyên gia
-              </p>
-            </div>
-
-            <form
-              onSubmit={handleSubmit}
-              className="bg-white rounded-3xl p-8 shadow-2xl"
-            >
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="companyName"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
-                  >
-                    <Building className="w-4 h-4 inline mr-2" />
-                    Tên công ty *
-                  </label>
-                  <input
-                    type="text"
-                    id="companyName"
-                    name="companyName"
-                    required
-                    value={formData.companyName}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="VD: Công ty TNHH ABC"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="contactName"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
-                  >
-                    <User className="w-4 h-4 inline mr-2" />
-                    Người liên hệ *
-                  </label>
-                  <input
-                    type="text"
-                    id="contactName"
-                    name="contactName"
-                    required
-                    value={formData.contactName}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="Họ và tên đầy đủ"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
-                  >
-                    <Mail className="w-4 h-4 inline mr-2" />
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="email@company.com"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
-                  >
-                    <Phone className="w-4 h-4 inline mr-2" />
-                    Số điện thoại *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="0901234567"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="industry"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
-                  >
-                    Lĩnh vực hoạt động *
-                  </label>
-                  <select
-                    id="industry"
-                    name="industry"
-                    required
-                    value={formData.industry}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  >
-                    <option value="">Chọn lĩnh vực</option>
-                    {industries.map((industry) => (
-                      <option key={industry.value} value={industry.value}>
-                        {industry.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="employeeCount"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
-                  >
-                    Quy mô nhân sự *
-                  </label>
-                  <select
-                    id="employeeCount"
-                    name="employeeCount"
-                    required
-                    value={formData.employeeCount}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  >
-                    <option value="">Chọn quy mô</option>
-                    <option value="10-50">10-50 nhân viên</option>
-                    <option value="51-100">51-100 nhân viên</option>
-                    <option value="101-200">101-200 nhân viên</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <label
-                  htmlFor="businessDescription"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Mô tả ngắn gọn về hoạt động kinh doanh *
-                </label>
-                <textarea
-                  id="businessDescription"
-                  name="businessDescription"
-                  rows={3}
-                  required
-                  value={formData.businessDescription}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  placeholder="Mô tả sản phẩm/dịch vụ chính, thị trường mục tiêu..."
-                ></textarea>
-              </div>
-
-              <div className="mt-6">
-                <label
-                  htmlFor="currentChallenges"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Thử thách hiện tại trong chuyển đổi số/bền vững
-                </label>
-                <textarea
-                  id="currentChallenges"
-                  name="currentChallenges"
-                  rows={3}
-                  value={formData.currentChallenges}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  placeholder="Những khó khăn mà công ty đang gặp phải trong quá trình chuyển đổi..."
-                ></textarea>
-              </div>
-
-              <div className="mt-6">
-                <label
-                  htmlFor="twinTransitionIdeas"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Ý tưởng Twin Transition của bạn *
-                </label>
-                <textarea
-                  id="twinTransitionIdeas"
-                  name="twinTransitionIdeas"
-                  rows={4}
-                  required
-                  value={formData.twinTransitionIdeas}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  placeholder="Chia sẻ ý tưởng kết hợp chuyển đổi số và phát triển bền vững cho doanh nghiệp của bạn..."
-                ></textarea>
-              </div>
-
-              <div className="mt-8">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold text-lg rounded-xl hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin mr-3"></div>
-                      Đang xử lý...
-                    </>
-                  ) : (
-                    <>
-                      Đăng ký tham gia Twin Transition Challenge
-                      <ChevronRight className="w-6 h-6 ml-2" />
-                    </>
-                  )}
-                </button>
-              </div>
-
-              <p className="text-sm text-gray-500 text-center mt-4">
-                Bằng cách đăng ký, bạn đồng ý với điều khoản sử dụng và chính
-                sách bảo mật của Twin Transition Hub
-              </p>
-            </form>
-          </div>
-        </div>
-      </section> */}
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
@@ -1357,9 +796,10 @@ function App() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4">Liên hệ</h4>
+              <h4 className="text-lg font-semibold mb-4">Ban tổ chức</h4>
               <div className="space-y-2 text-gray-400">
-                <p>Địa chỉ: Việt Nam</p>
+                <p>Ms. Hà Linh (083 911 1104)</p>
+                <p>Ms. Hạnh Nguyễn (083.9918.445)</p>
               </div>
             </div>
           </div>
