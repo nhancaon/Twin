@@ -720,7 +720,7 @@ function App() {
           frameBorder="0"
           onLoad={() => console.log("Airtable form loaded.")}
           width="70%"
-          height="3500"
+          height="3080"
           style={{ background: "transparent", border: "1px solid #ccc" }}
           title="Twin Transition Challenge Registration Form"
         ></iframe>
