@@ -8,10 +8,6 @@ import {
   Cpu,
   Users,
   Trophy,
-  Mail,
-  Phone,
-  Building,
-  User,
   ArrowRight,
   CheckCircle,
   Play,
@@ -160,6 +156,14 @@ function App() {
             </li>
             <li>
               <a
+                href="#q&a-section"
+                className="hover:text-blue-600 transition-colors"
+              >
+                Q&A
+              </a>
+            </li>
+            <li>
+              <a
                 href="#register"
                 className="bg-green-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-green-700 hover:shadow-lg transition-transform transform hover:scale-105 font-semibold"
               >
@@ -282,7 +286,7 @@ function App() {
       </Slide>
 
       {/* About Project Section */}
-      <Fade triggerOnce>
+      <Slide direction="left" triggerOnce>
         <section id="about" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
@@ -345,7 +349,7 @@ function App() {
             </div>
           </div>
         </section>
-      </Fade>
+      </Slide>
 
       {/* Challenge Section */}
       <Fade triggerOnce>
@@ -503,7 +507,7 @@ function App() {
       </Fade>
 
       {/* Events Section */}
-      <Fade triggerOnce>
+      <Slide direction="right" triggerOnce>
         <section id="events-section" className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
@@ -550,10 +554,10 @@ function App() {
             </div>
           </div>
         </section>
-      </Fade>
+      </Slide>
 
       {/* Prizes Section */}
-      <Fade triggerOnce>
+      <Slide direction="up" triggerOnce>
         <section
           id="prizes-section"
           className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white"
@@ -598,111 +602,115 @@ function App() {
             </div>
           </div>
         </section>
-      </Fade>
+      </Slide>
 
       {/* Partners Section */}
-      <section id="partners-section" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Đối tác & Nhà tài trợ
-              </h2>
-              <p className="text-xl text-gray-600">
-                Sự hợp tác chiến lược từ các tổ chức uy tín
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-2xl shadow-lg text-center transition-shadow duration-300 hover:shadow-xl">
-                <img
-                  src={images.aped}
-                  alt="GIZ Logo"
-                  className="h-24 w-auto object-contain bg-white p-2 rounded-lg flex items-center justify-center mx-auto mb-2"
-                />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">APED</h3>
-                <p className="text-gray-600">
-                  Cục Phát triển Doanh nghiệp Tư nhân và Kinh tế Tập thể (Bộ Tài chính Việt Nam)
+      <Fade triggerOnce>
+        <section id="partners-section" className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                  Đối tác & Nhà tài trợ
+                </h2>
+                <p className="text-xl text-gray-600">
+                  Sự hợp tác chiến lược từ các tổ chức uy tín
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg text-center transition-shadow duration-300 hover:shadow-xl">
-                <img
-                  src={images.giz}
-                  alt="GIZ Logo"
-                  className="h-20 w-auto object-contain bg-white p-2 rounded-lg flex items-center justify-center mx-auto mb-6"
-                />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">GIZ</h3>
-                <p className="text-gray-600">Cơ quan Hợp tác Phát triển Đức</p>
-              </div>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-white p-8 rounded-2xl shadow-lg text-center transition-shadow duration-300 hover:shadow-xl">
+                  <img
+                    src={images.aped}
+                    alt="GIZ Logo"
+                    className="h-24 w-auto object-contain bg-white p-2 rounded-lg flex items-center justify-center mx-auto mb-2"
+                  />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">APED</h3>
+                  <p className="text-gray-600">
+                    Cục Phát triển Doanh nghiệp Tư nhân và Kinh tế Tập thể (Bộ Tài chính Việt Nam)
+                  </p>
+                </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg text-center transition-shadow duration-300 hover:shadow-xl">
-                <img
-                  src={images.bbu}
-                  alt="GIZ Logo"
-                  className="h-20 w-auto object-contain bg-white p-2 rounded-lg flex items-center justify-center mx-auto mb-6"
-                />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  BambuUP
-                </h3>
-                <p className="text-gray-600">
-                  Nền tảng đổi mới sáng tạo mở tiên phong tại Việt Nam
-                </p>
+                <div className="bg-white p-8 rounded-2xl shadow-lg text-center transition-shadow duration-300 hover:shadow-xl">
+                  <img
+                    src={images.giz}
+                    alt="GIZ Logo"
+                    className="h-20 w-auto object-contain bg-white p-2 rounded-lg flex items-center justify-center mx-auto mb-6"
+                  />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">GIZ</h3>
+                  <p className="text-gray-600">Cơ quan Hợp tác Phát triển Đức</p>
+                </div>
+
+                <div className="bg-white p-8 rounded-2xl shadow-lg text-center transition-shadow duration-300 hover:shadow-xl">
+                  <img
+                    src={images.bbu}
+                    alt="GIZ Logo"
+                    className="h-20 w-auto object-contain bg-white p-2 rounded-lg flex items-center justify-center mx-auto mb-6"
+                  />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    BambuUP
+                  </h3>
+                  <p className="text-gray-600">
+                    Nền tảng đổi mới sáng tạo mở tiên phong tại Việt Nam
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Fade>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Câu hỏi thường gặp
-              </h2>
-              <p className="text-xl text-gray-600">
-                Giải đáp những thắc mắc phổ biến về Twin Transition Challenge
-              </p>
-            </div>
+      <Fade triggerOnce>
+        <section id="q&a-section" className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                  Câu hỏi thường gặp
+                </h2>
+                <p className="text-xl text-gray-600">
+                  Giải đáp những thắc mắc phổ biến về Twin Transition Challenge
+                </p>
+              </div>
 
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden"
-                >
-                  <button
-                    onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                    className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden"
                   >
-                    <h3 className="text-lg font-bold text-gray-900 pr-4">
-                      {faq.question}
-                    </h3>
-                    <ChevronDown
-                      className={`w-6 h-6 text-gray-500 transition-transform ${openFAQ === index ? "rotate-180" : ""
-                        }`}
-                    />
-                  </button>
-                  {openFAQ === index && (
-                    <div className="px-8 pb-6">
-                      <p className="mb-4">{faq.intro}</p>
-                      {faq.answer && (
-                        <ul className="list-disc list-inside space-y-2">
-                          {faq.answer.map((item, idx) => (
-                            <li key={idx}>{item}</li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  )}
-                </div>
-              ))}
+                    <button
+                      onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                      className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                    >
+                      <h3 className="text-lg font-bold text-gray-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      <ChevronDown
+                        className={`w-6 h-6 text-gray-500 transition-transform ${openFAQ === index ? "rotate-180" : ""
+                          }`}
+                      />
+                    </button>
+                    {openFAQ === index && (
+                      <div className="px-8 pb-6">
+                        <p className="mb-4">{faq.intro}</p>
+                        {faq.answer && (
+                          <ul className="list-disc list-inside space-y-2">
+                            {faq.answer.map((item, idx) => (
+                              <li key={idx}>{item}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Fade>
       <section
         id="register"
         className="py-20 bg-gradient-to-r from-blue-600 to-green-600 flex items-center justify-center"
@@ -712,105 +720,105 @@ function App() {
           frameBorder="0"
           onLoad={() => console.log("Airtable form loaded.")}
           width="70%"
-          height="1300"
+          height="3500"
           style={{ background: "transparent", border: "1px solid #ccc" }}
           title="Twin Transition Challenge Registration Form"
         ></iframe>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Twin Transition Challenge</h3>
-              <p className="text-gray-400 mb-6">
-                Chuyển đổi số & xanh cho SMEs Việt Nam
-              </p>
-              {/* <div className="flex space-x-4">
-                <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                  <Mail className="w-5 h-5" />
+      <Fade triggerOnce>
+        <footer className="bg-gray-900 text-white py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-4 gap-8 mb-12">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Twin Transition Challenge</h3>
+                <p className="text-gray-400 mb-6">
+                  Chuyển đổi số & xanh cho SMEs Việt Nam
+                </p>
+                {/* <div className="flex space-x-4">
+                  <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                </div> */}
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Dự án</h4>
+                <ul className="space-y-2 text-gray-400">
+                  <li>
+                    <a
+                      href="#about"
+                      className="hover:text-white transition-colors"
+                    >
+                      Giới thiệu
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#register"
+                      className="hover:text-white transition-colors"
+                    >
+                      Đăng ký
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-white transition-colors">
+                      Lịch trình
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-white transition-colors">
+                      Giải thưởng
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Hỗ trợ</h4>
+                <ul className="space-y-2 text-gray-400">
+                  <li>
+                    <a href="#" className="hover:text-white transition-colors">
+                      FAQ
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-white transition-colors">
+                      Tài liệu
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-white transition-colors">
+                      Mentoring
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-white transition-colors">
+                      Liên hệ
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Ban tổ chức</h4>
+                <div className="space-y-2 text-gray-400">
+                  <p>Ms. Hà Linh (083 911 1104)</p>
+                  <p>Ms. Hạnh Nguyễn (083.9918.445)</p>
                 </div>
-                <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
-                  <Phone className="w-5 h-5" />
-                </div>
-              </div> */}
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Dự án</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a
-                    href="#about"
-                    className="hover:text-white transition-colors"
-                  >
-                    Giới thiệu
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#register"
-                    className="hover:text-white transition-colors"
-                  >
-                    Đăng ký
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Lịch trình
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Giải thưởng
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Hỗ trợ</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    FAQ
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Tài liệu
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Mentoring
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Liên hệ
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Ban tổ chức</h4>
-              <div className="space-y-2 text-gray-400">
-                <p>Ms. Hà Linh (083 911 1104)</p>
-                <p>Ms. Hạnh Nguyễn (083.9918.445)</p>
               </div>
             </div>
-          </div>
 
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>
-              &copy; 2025 Twin Transition Challenge.
-            </p>
+            <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+              <p>
+                &copy; 2025 Twin Transition Challenge.
+              </p>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </Fade>
     </div>
   );
 }
