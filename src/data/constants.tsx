@@ -4,30 +4,30 @@ import images from "../assets";
 export const prizes = [
   {
     icon: <Gift className="w-12 h-12 text-yellow-500" />,
-    title: "Giải thưởng tài chính",
-    description: "Giải thưởng với tổng giá trị tiền mặt lên đến xx triệu đồng tiền mặt cho doanh nghiệp chiến thắng",
+    title: "Giải thưởng",
+    description: "Quán quân và Á quân nhận được phần thưởng hiện kim lần lượt là 150 triệu và 50 triệu VNĐ, các SMEs tham gia pitching còn lại nhận được 15 triệu VNĐ/DN.",
   },
   {
     icon: <Users className="w-12 h-12 text-blue-500" />,
     title: "Hỗ trợ kỹ thuật chuyên sâu",
-    description: "Hỗ trợ kỹ thuật chuyên sâu từ dự án Twin Transition Hub (TTH) cho Top 5 doanh nghiệp xuất sắc nhất",
-  },
-  {
-    icon: <Globe className="w-12 h-12 text-green-500" />,
-    title: "Chứng nhận thành tích",
-    description: "Giấy chứng nhận ghi nhận thành tích chuyển đổi kép",
+    description: "Top 5 doanh nghiệp xuất sắc nhất sẽ nhận hỗ trợ kỹ thuật chuyên sâu từ dự án Twin Transition Hub (TTH) cùng Giấy chứng nhận ghi nhận thành tích chuyển đổi kép",
   },
   {
     icon: <Star className="w-12 h-12 text-purple-500" />,
-    title: "Cơ hội khẳng định vị thế",
+    title: "Uy tín & hình ảnh",
     description: "Gia tăng uy tín, tạo dấu ấn với khách hàng và nhà đầu tư",
+  },
+  {
+    icon: <Globe className="w-12 h-12 text-green-500" />,
+    title: "Cơ hội kết nối",
+    description: "Kết nối & tư vấn trực tiếp với các chuyên gia hàng đầu trong lĩnh vực xanh & số hóa, mở rộng mạng lưới đối tác và cơ hội hợp tác lâu dài",
   },
 ];
 
 export const faqs = [
   {
     question: "Doanh nghiệp cần chuẩn bị những hồ sơ gì để đăng ký tham gia?",
-    intro: "Doanh nghiệp cần điền thông tin theo mẫu và chuẩn bị tài liệu bao gồm:",
+    intro: "Doanh nghiệp cần điền thông tin theo mẫu và chuẩn bị tài liệu (bản trình bày, video) bao gồm các thông tin:",
     answer: [
       "Giới thiệu doanh nghiệp",
       "Giới thiệu về sáng kiến chuyển đổi xanh và số của doanh nghiệp",
@@ -61,25 +61,25 @@ export const rawTimeline = [
     phase: "Giai đoạn 1",
     title: "Mở đơn đăng ký và nộp hồ sơ dự án",
     date: "24/09/2025 - 04/10/2025",
-    description: "Các doanh nghiệp sẽ hoàn thiện và gửi hồ sơ dự án chuyển đổi kép (xanh & số) theo hướng dẫn.",
+    description: "Các doanh nghiệp sẽ hoàn thiện và gửi hồ sơ dự án chuyển đổi kép theo hướng dẫn.",
   },
   {
     phase: "Giai đoạn 2",
     title: "Phiên thông tin trực tuyến (Online Information Session)",
     date: "25/09/2025",
-    description: "Ban tổ chức tổ chức buổi chia sẻ trực tuyến nhằm giới thiệu chi tiết về mục tiêu, thể lệ và tiêu chí đánh giá cuộc thi. SMEs sẽ được hướng dẫn cách chuẩn bị hồ sơ, đồng thời giải đáp thắc mắc trực tiếp từ ban tổ chức.",
+    description: "Giới thiệu chi tiết về mục tiêu, thể lệ và tiêu chí đánh giá cuộc thi. SMEs sẽ được hướng dẫn cách chuẩn bị hồ sơ, đồng thời giải đáp thắc mắc trực tiếp từ BTC.",
   },
   {
     phase: "Giai đoạn 3",
     title: "Công bố kết quả vòng hồ sơ",
     date: "9/10/2025",
-    description: "Công bố danh sách Top 3-5 doanh nghiệp từ mỗi lĩnh vực.",
+    description: "Danh sách Top 3-5 doanh nghiệp/ lĩnh vực.",
   },
   {
     phase: "Giai đoạn 4",
     title: "Phiên định hướng & hoạt động mentoring",
     date: "10/10/2025 - 20/10/2025",
-    description: "Các doanh nghiệp lọt vào danh sách sẽ nhận phản hồi và hướng dẫn để chuẩn bị cho giai đoạn huấn luyện và pitching",
+    description: "Các doanh nghiệp lọt vào danh sách sẽ nhận phản hồi và hướng dẫn để chuẩn bị cho bài pitching.",
   },
   {
     phase: "Giai đoạn 5",

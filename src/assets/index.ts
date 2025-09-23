@@ -5,6 +5,7 @@ import agri from './agri.jpg';
 import wood from './wood.jpeg';
 import silk from './silk.jfif';
 import favicon from './favicon.png'
+import dz from './dz.jpg'
 
 const images = {
   giz,
@@ -13,7 +14,8 @@ const images = {
   agri,
   wood,
   silk,
-  favicon
+  favicon,
+  dz
 };
 
 export default images;

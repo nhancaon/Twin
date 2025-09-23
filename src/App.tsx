@@ -113,13 +113,20 @@ function App() {
                 About
               </a>
             </li>
-
             <li>
               <a
-                href="#challenge-section"
+                href="#target-section"
                 className="hover:text-blue-600 transition-colors"
               >
-                Playground
+                Target Participants
+              </a>
+            </li>
+            <li>
+              <a
+                href="#selection-section"
+                className="hover:text-blue-600 transition-colors"
+              >
+                Selection Criteria
               </a>
             </li>
             <li>
@@ -185,18 +192,24 @@ function App() {
                 <div className="bg-green-600 text-white px-6 py-2 rounded-xl mb-4 font-semibold text-sm md:text-base">
                   ĐƠN VỊ TỔ CHỨC
                 </div>
-                <div className="flex items-center space-x-6">
+
+                <div className="flex items-center space-x-6 bg-white rounded-lg">
                   <img
-                    src={images.aped}
+                    src={images.dz}
                     alt="APED Logo"
-                    className="h-16 w-44 object-contain bg-white p-2 rounded-lg"
+                    className="h-28 w-auto object-fill rounded-lg mr-2"
                   />
-                  <div className="w-px h-16 bg-white/50"></div> {/* Vertical separator */}
                   <img
                     src={images.giz}
                     alt="GIZ Logo"
-                    className="h-16 w-auto object-contain bg-white p-2 rounded-lg"
+                    className="h-16 w-auto object-contain "
                   />
+                  <img
+                    src={images.aped}
+                    alt="APED Logo"
+                    className="h-16 w-44 object-contain "
+                  />
+
                 </div>
               </div>
 
@@ -205,11 +218,14 @@ function App() {
                 <div className="bg-green-600 text-white px-6 py-2 rounded-xl mb-4 font-semibold text-sm md:text-base">
                   ĐƠN VỊ TƯ VẤN TRIỂN KHAI CHUỖI SỰ KIỆN
                 </div>
-                <img
-                  src={images.bbu}
-                  alt="BambuUP Logo"
-                  className="h-16 w-auto object-contain bg-white p-2 rounded-lg"
-                />
+                <div className="h-28 flex items-center justify-center bg-white rounded-lg">
+                  <img
+                    src={images.bbu}
+                    alt="BambuUP Logo"
+                    className="h-16 w-auto object-contain p-3"
+                  />
+                </div>
+
               </div>
             </div>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -299,51 +315,26 @@ function App() {
                 </p>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-8 mb-16">
+              <div className="grid lg:grid-cols-1 gap-8 mb-16">
                 <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                   <Target className="w-12 h-12 text-blue-500 mb-6" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Mục tiêu
+                    Tổng quan
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Chương trình hướng tới việc hỗ trợ SMEs <b>tư duy chiến lược, nâng cao năng lực cạnh tranh</b> và kiến tạo những sáng kiến chuyển đổi kép – vừa xanh, vừa số – đồng thời gắn kết với các giá trị bình đẳng giới và tăng trưởng bao trùm.
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    <b>Twin Transition Challenge</b> là chương trình nằm trong Dự án “Trung tâm Chuyển đổi kép - Chuyển đổi số và Đổi mới sáng tạo nhằm bảo vệ môi trường và khí hậu tại Việt Nam” dành cho các DNNVV (SMEs) tại Việt Nam, được tổ chức bởi Cục Phát triển Doanh nghiệp tư nhân và Kinh tế tập thể - APED (Bộ Tài chính) và Tổ chức Hợp tác Quốc tế Đức - GIZ, phối hợp triển khai bởi Công ty Cổ phần BambuUP với mục tiêu tăng cường sử dụng năng lượng và nguồn lực đầu vào  hiệu quả thông qua chuyển đổi số và chuyển đổi xanh, kiến tạo tương lai xanh hóa - số hóa hướng tới giảm phát thải, phát triển bền vững.
                   </p>
-                </div>
-
-                <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                  <Users className="w-12 h-12 text-green-500 mb-6" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Đối tượng
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-2">
-                    Để tham gia chương trình, các doanh nghiệp Việt Nam cần đáp ứng các tiêu chí sau đây:
-                  </p>
-                  <ul className="text-gray-600 mt-auto space-y-2">
-                    <li className="flex items-start leading-tight">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 self-start" />
-                      Doanh nghiệp là doanh nghiệp nhỏ và vừa thuộc 3 lĩnh vực Chế biến nông sản,
-                      dệt may, chế biến gỗ &amp; giấy.
-                    </li>
-                    <li className="flex items-start leading-tight">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 self-start" />
-                      Doanh nghiệp có sáng kiến về chuyển đổi số và chuyển đổi xanh đang hoặc đã triển khai.
-                    </li>
-                    <li className="flex items-start leading-tight">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 self-start" />
-                      Ít nhất một thành viên tham dự làm việc tại Việt Nam.
-                    </li>
-                  </ul>
                 </div>
               </div>
 
               {/* Video Section */}
               <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Video giới thiệu dự án
+                  Poster
                 </h3>
                 <div className="relative bg-gradient-to-r from-blue-500 to-green-500 rounded-xl p-16">
                   <Play className="w-20 h-20 text-white mx-auto mb-4" />
-                  <p className="text-white text-lg">Video sẽ được cập nhật sớm</p>
+                  <p className="text-white text-lg">Poster sẽ được cập nhật sớm</p>
                 </div>
               </div>
             </div>
@@ -351,72 +342,134 @@ function App() {
         </section>
       </Slide>
 
-      {/* Challenge Section */}
+      {/* Target Section */}
       <Fade triggerOnce>
         <section
-          id="challenge-section"
+          id="target-section"
           className="py-20 bg-gradient-to-r from-blue-600 to-green-600 text-white"
         >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                  Twin Transition Challenge
+              <div className="text-center mb-6">
+                <h2 className="text-4xl lg:text-5xl font-bold">
+                  Đối tượng tham gia
                 </h2>
-                <p className="text-xl text-blue-100 max-w-4xl mx-auto">
-                  Cuộc thi dành cho SMEs trong 3 ngành trọng điểm, tập trung vào
-                  bình đẳng giới và tăng trưởng bao trùm.
-                </p>
               </div>
-
-              <div className="grid lg:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-5">
+                <h3 className="text-2xl font-bold text-center mb-8">
+                  Đối tượng tham gia là các doanh nghiệp nhỏ và vừa (SME) theo tiêu chuẩn:
+                </h3>
+                <div className="grid md:grid-cols-1 gap-8">
+                  <ul className="space-y-3">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
+                      Nhân sự: Không quá 500 nhân viên.
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
+                      Doanh thu hàng năm không vượt quá 300 tỷ VNĐ.
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
+                      Hoạt động trong ba lĩnh vực ưu tiên:
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="grid lg:grid-cols-3 gap-8 mb-5">
                 {industries.map((industry, index) => (
                   <div
                     key={index}
                     className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20"
                   >
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                      <Leaf className="w-8 h-8 text-white" />
-                    </div>
                     <img
                       src={industry.image}
                       alt="GIZ Logo"
-                      className="h-56 w-auto object-contain flex items-center justify-center mx-auto mb-6"
+                      className="h-56 w-auto object-contain flex items-center justify-center mx-auto mb-3"
                     />
                     <h3 className="text-2xl font-bold text-center mb-4">
                       {industry.label}
                     </h3>
-                    <p className="text-blue-100 text-center">
-                      Ứng dụng công nghệ số và thực hành bền vững trong lĩnh vực{" "}
-                      {industry.label.toLowerCase()}
-                    </p>
                   </div>
                 ))}
               </div>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-2">
+                <div className="grid md:grid-cols-1 gap-8">
+                  <ul className="space-y-3">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3 flex-shrink-0 self-start" />
+                      Đặc biệt, các công ty do phụ nữ làm chủ được ưu tiên khuyến khích tham gia.
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3 flex-shrink-0 self-start" />
+                      Doanh nghiệp có sáng kiến về chuyển đổi số và chuyển đổi xanh đang hoặc đã triển khai với tác động có thể đo lường được, giải quyết các thách thức của Việt Nam, với ít nhất một thành viên trong nhóm có mặt tại Việt Nam.
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3 flex-shrink-0 self-start" />
+                      Nhóm phải có ít nhất 50% sự tham gia của phụ nữ, hoặc giải pháp phải hỗ trợ phụ nữ hoặc các nhóm yếu thế.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Fade>
 
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+      {/* Selection Criteria Section */}
+      <Fade triggerOnce>
+        <section
+          id="selection-section"
+          className="py-20 bg-gray-600 text-white"
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-6">
+                <h2 className="text-4xl lg:text-5xl font-bold">
+                  Tiêu chí tuyển chọn
+                </h2>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-5">
                 <h3 className="text-2xl font-bold text-center mb-8">
-                  Chủ đề xuyên suốt
+                  Đối tượng tham gia là các doanh nghiệp nhỏ và vừa (SME) theo tiêu chuẩn:
                 </h3>
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div className="text-center">
-                    <Users className="w-12 h-12 text-white mx-auto mb-4" />
-                    <h4 className="text-xl font-bold mb-2">Bình đẳng giới</h4>
-                    <p className="text-blue-100">
-                      Thúc đẩy sự tham gia và lãnh đạo của phụ nữ trong chuyển đổi
-                      số và xanh
-                    </p>
-                  </div>
-                  <div className="text-center">
-                    <TrendingUp className="w-12 h-12 text-white mx-auto mb-4" />
-                    <h4 className="text-xl font-bold mb-2">
-                      Tăng trưởng bao trùm
-                    </h4>
-                    <p className="text-blue-100">
-                      Đảm bảo lợi ích từ chuyển đổi được chia sẻ công bằng cho tất
-                      cả các bên
-                    </p>
-                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3 flex-shrink-0 self-start" />
+                      Mức độ triển khai/ tích hợp chuyển đổi kép trong hoạt động kinh doanh hiện tại
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3 flex-shrink-0 self-start" />
+                      Tác động của sáng kiến
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3 flex-shrink-0 self-start" />
+                      Mức độ đổi mới sáng tạo
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3 flex-shrink-0 self-start" />
+                      Tính khả thi và mức độ sẵn sàng
+                    </li>
+                  </ul>
+                  <ul className="space-y-3">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3 flex-shrink-0 self-start" />
+                      Khả năng mở rộng và nhân rộng
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3 flex-shrink-0 self-start" />
+                      Tính bền vững về tài chính
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3 flex-shrink-0 self-start" />
+                      Cam kết của đội ngũ/ Tầm nhìn và năng lực lãnh đạo
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3 flex-shrink-0 self-start" />
+                      Sự phù hợp với chính sách quốc gia/ khu vực
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -426,11 +479,11 @@ function App() {
 
       {/* Timeline Section */}
       <Fade triggerOnce>
-        <section id="timeline-section" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <section id="timeline-section" className="py-16 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-20">
-                <h2 className="text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+              <div className="text-center mb-10">
+                <h2 className="text-5xl font-extrabold text-gray-900 mb-2 tracking-tight">
                   Lịch trình thử thách
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -532,7 +585,7 @@ function App() {
                     </div>
                   </div>
                   <p className="text-gray-700 mb-6">
-                    Một diễn đàn đa bên với sự tham gia của doanh nghiệp, chuyên gia, nhà đầu tư. Doanh nghiệp sẽ có cơ hội cập nhật xu hướng, học hỏi kinh nghiệm thực tiễn, kết nối và tìm kiếm cơ hội hợp tác.
+                    Là diễn đàn đa bên với sự tham gia của doanh nghiệp, chuyên gia, nhà đầu tư. Doanh nghiệp sẽ có cơ hội cập nhật xu hướng, học hỏi kinh nghiệm thực tiễn, kết nối và tìm kiếm cơ hội hợp tác.
                   </p>
                 </div>
 
@@ -564,16 +617,13 @@ function App() {
         >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
+              <div className="text-center">
                 <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                  Giải thưởng & Cơ hội
+                  Quyền lợi khi tham gia chương trình
                 </h2>
-                <p className="text-xl text-purple-100">
-                  Những phần thưởng giá trị dành cho các SMEs xuất sắc
-                </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-1">
                 {prizes.map((prize, index) => (
                   <div
                     key={index}
@@ -581,20 +631,45 @@ function App() {
                   >
                     <div className="flex justify-center mb-4">{prize.icon}</div>
                     <h3 className="text-lg font-bold mb-3">{prize.title}</h3>
-                    <p className="text-purple-100 text-sm">{prize.description}</p>
+                    <p className="text-base text-purple-100 text-sm">{prize.description}</p>
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+      </Slide>
 
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-                <h3 className="text-2xl font-bold text-center mb-8">
-                  Lợi ích cho tất cả SMEs tham gia
+      {/* Prepart Section */}
+      <Fade triggerOnce>
+        <section
+          id="prepare-section"
+          className="py-20 bg-gradient-to-r bg-gray-50 text-black"
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-4">
+                <h2 className="text-4xl lg:text-5xl font-bold">
+                  Hồ sơ cần chuẩn bị
+                </h2>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 border-2 border-green-500">
+                <h3 className="text-2xl font-bold text-center mb-8 text-gray-600">
+                  Doanh nghiệp cần điền thông tin theo mẫu và chuẩn bị tài liệu (bản trình bày, video) bao gồm các thông tin:
                 </h3>
-                <div className="grid md:grid-cols-1 gap-8">
+                <div className="grid md:grid-cols-2 gap-8 text-gray-900">
                   <ul className="space-y-3">
                     <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Kết nối & tư vấn trực tiếp với các chuyên gia hàng đầu trong lĩnh vực xanh & số hóa, mở rộng mạng lưới đối tác và cơ hội hợp tác lâu dài
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0 self-start" />
+                      Giới thiệu doanh nghiệp
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0 self-start" />
+                      Giới thiệu về sáng kiến chuyển đổi xanh và số của doanh nghiệp
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0 self-start" />
+                      Tác động của các sáng kiến
                     </li>
                   </ul>
                 </div>
@@ -602,7 +677,7 @@ function App() {
             </div>
           </div>
         </section>
-      </Slide>
+      </Fade>
 
       {/* Partners Section */}
       <Fade triggerOnce>
