@@ -182,8 +182,8 @@ function App() {
       </nav>
       {/* Hero Section */}
       <Slide direction="down" triggerOnce>
-        <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-green-600 text-white">
-          <div className="absolute inset-0 bg-black/20"></div>
+        <section style={{ backgroundImage: `url(${images.bg})` }} className="relative overflow-hidden text-white bg-cover bg-center bg-no-repeat text-white">
+          <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative container mx-auto px-4 pt-4 lg:pt-6 pb-24 lg:pb-32">
             {/* Logos */}
             <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-12 mb-10 items-center">
@@ -316,13 +316,13 @@ function App() {
               </div>
 
               <div className="grid lg:grid-cols-1 gap-8 mb-16">
-                <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                  <Target className="w-12 h-12 text-blue-500 mb-6" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                  <Target className="w-12 h-12 text-yellow-300 mb-6" />
+                  <h3 className="text-2xl font-bold text-white mb-4">
                     Tổng quan
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    <b>Twin Transition Challenge</b> là chương trình nằm trong Dự án “Trung tâm Chuyển đổi kép - Chuyển đổi số và Đổi mới sáng tạo nhằm bảo vệ môi trường và khí hậu tại Việt Nam” dành cho các DNNVV (SMEs) tại Việt Nam, được tổ chức bởi Cục Phát triển Doanh nghiệp tư nhân và Kinh tế tập thể - APED (Bộ Tài chính) và Tổ chức Hợp tác Quốc tế Đức - GIZ, phối hợp triển khai bởi Công ty Cổ phần BambuUP với mục tiêu tăng cường sử dụng năng lượng và nguồn lực đầu vào  hiệu quả thông qua chuyển đổi số và chuyển đổi xanh, kiến tạo tương lai xanh hóa - số hóa hướng tới giảm phát thải, phát triển bền vững.
+                  <p className="text-lg text-white leading-relaxed">
+                    <b className="text-yellow-300">Twin Transition Challenge</b> là chương trình nằm trong Dự án <b className="text-yellow-300">“Trung tâm Chuyển đổi kép - Chuyển đổi số và Đổi mới sáng tạo nhằm bảo vệ môi trường và khí hậu tại Việt Nam”</b> dành cho các <b className="text-yellow-300">DNNVV (SMEs) tại Việt Nam</b>, được tổ chức bởi <b className="text-yellow-300">Cục Phát triển Doanh nghiệp tư nhân và Kinh tế tập thể - APED (Bộ Tài chính)</b> và <b className="text-yellow-300">Tổ chức Hợp tác Quốc tế Đức - GIZ</b>, phối hợp triển khai bởi <b className="text-yellow-300">Công ty Cổ phần BambuUP</b> với mục tiêu tăng cường sử dụng năng lượng và nguồn lực đầu vào  hiệu quả thông qua chuyển đổi số và chuyển đổi xanh, kiến tạo tương lai xanh hóa - số hóa hướng tới giảm phát thải, phát triển bền vững.
                   </p>
                 </div>
               </div>
@@ -332,10 +332,7 @@ function App() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
                   Poster
                 </h3>
-                <div className="relative bg-gradient-to-r from-blue-500 to-green-500 rounded-xl p-16">
-                  <Play className="w-20 h-20 text-white mx-auto mb-4" />
-                  <p className="text-white text-lg">Poster sẽ được cập nhật sớm</p>
-                </div>
+
               </div>
             </div>
           </div>
@@ -416,11 +413,51 @@ function App() {
         </section>
       </Fade>
 
+      {/* Prepart Section */}
+      <Fade triggerOnce>
+        <section
+          id="prepare-section"
+          className="py-20 bg-gradient-to-r bg-white text-black"
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-4">
+                <h2 className="text-4xl lg:text-5xl font-bold">
+                  Hồ sơ cần chuẩn bị
+                </h2>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 border-2 border-green-500">
+                <h3 className="text-2xl font-bold text-center mb-8 text-gray-600">
+                  Doanh nghiệp cần điền thông tin theo mẫu và chuẩn bị tài liệu (bản trình bày, video) bao gồm các thông tin:
+                </h3>
+                <div className="grid md:grid-cols-2 gap-8 text-gray-900">
+                  <ul className="space-y-3">
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0 self-start" />
+                      Giới thiệu doanh nghiệp
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0 self-start" />
+                      Giới thiệu về sáng kiến chuyển đổi xanh và số của doanh nghiệp
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0 self-start" />
+                      Tác động của các sáng kiến
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Fade>
+
       {/* Selection Criteria Section */}
       <Fade triggerOnce>
         <section
           id="selection-section"
-          className="py-20 bg-gray-600 text-white"
+          className="py-20 relative overflow-hidden text-white bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${images.txt})` }}
         >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
@@ -640,45 +677,6 @@ function App() {
         </section>
       </Slide>
 
-      {/* Prepart Section */}
-      <Fade triggerOnce>
-        <section
-          id="prepare-section"
-          className="py-20 bg-gradient-to-r bg-gray-50 text-black"
-        >
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-4">
-                <h2 className="text-4xl lg:text-5xl font-bold">
-                  Hồ sơ cần chuẩn bị
-                </h2>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 border-2 border-green-500">
-                <h3 className="text-2xl font-bold text-center mb-8 text-gray-600">
-                  Doanh nghiệp cần điền thông tin theo mẫu và chuẩn bị tài liệu (bản trình bày, video) bao gồm các thông tin:
-                </h3>
-                <div className="grid md:grid-cols-2 gap-8 text-gray-900">
-                  <ul className="space-y-3">
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0 self-start" />
-                      Giới thiệu doanh nghiệp
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0 self-start" />
-                      Giới thiệu về sáng kiến chuyển đổi xanh và số của doanh nghiệp
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0 self-start" />
-                      Tác động của các sáng kiến
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </Fade>
-
       {/* Partners Section */}
       <Fade triggerOnce>
         <section id="partners-section" className="py-20 bg-white">
@@ -803,12 +801,13 @@ function App() {
 
       {/* Footer */}
       <Fade triggerOnce>
-        <footer className="bg-gray-900 text-white py-16">
-          <div className="container mx-auto px-4">
+        <footer style={{ backgroundImage: `url(${images.twin})` }} className="relative overflow-hidden bg-cover bg-center bg-no-repeat text-white">
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="relative z-10 container mx-auto px-4 mt-5">
             <div className="grid md:grid-cols-4 gap-8 mb-12">
               <div>
                 <h3 className="text-2xl font-bold mb-4">Twin Transition Challenge</h3>
-                <p className="text-gray-400 mb-6">
+                <p className="text-white mb-6">
                   Chuyển đổi số & xanh cho SMEs Việt Nam
                 </p>
                 {/* <div className="flex space-x-4">
@@ -823,7 +822,7 @@ function App() {
 
               <div>
                 <h4 className="text-lg font-semibold mb-4">Dự án</h4>
-                <ul className="space-y-2 text-gray-400">
+                <ul className="space-y-2 text-white">
                   <li>
                     <a
                       href="#about"
@@ -854,7 +853,7 @@ function App() {
               </div>
               <div>
                 <h4 className="text-lg font-semibold mb-4">Hỗ trợ</h4>
-                <ul className="space-y-2 text-gray-400">
+                <ul className="space-y-2 text-white">
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
                       FAQ
@@ -879,7 +878,7 @@ function App() {
               </div>
               <div>
                 <h4 className="text-lg font-semibold mb-4">Ban tổ chức</h4>
-                <div className="space-y-2 text-gray-400">
+                <div className="space-y-2 text-white">
                   <p>Ms. Hà Linh (083 911 1104)</p>
                   <p>Ms. Hạnh Nguyễn (083.9918.445)</p>
                 </div>
