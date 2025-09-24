@@ -1,4 +1,4 @@
-import giz from './giz.png';
+import giz from './giz.jpg';
 import aped from './aped.png';
 import bbu from './bbu.png';
 import agri from './agri.jpg';
@@ -9,6 +9,11 @@ import dz from './dz.jpg'
 import txt from './txt.png'
 import bg from './bg.png'
 import twin from './twin.png'
+import poster from './poster.png'
+import logo from './logo.jpg'
+import hero_bg from './hero_bg.png'
+import gd from './g&d.png'
+import e1 from './e1.png'
 
 const images = {
   giz,
@@ -21,7 +26,12 @@ const images = {
   dz,
   txt,
   bg,
-  twin
+  twin,
+  poster,
+  logo,
+  hero_bg,
+  gd,
+  e1
 };
 
 export default images;

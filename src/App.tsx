@@ -182,68 +182,25 @@ function App() {
       </nav>
       {/* Hero Section */}
       <Slide direction="down" triggerOnce>
-        <section style={{ backgroundImage: `url(${images.bg})` }} className="relative overflow-hidden text-white bg-cover bg-center bg-no-repeat text-white">
-          <div className="absolute inset-0 bg-black/40"></div>
+        <section style={{ backgroundImage: `url(${images.hero_bg})` }} className="relative overflow-hidden text-white bg-cover bg-center bg-no-repeat text-white">
+
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-green-500/90 z-0"></div>
           <div className="relative container mx-auto px-4 pt-4 lg:pt-6 pb-24 lg:pb-32">
-            {/* Logos */}
-            <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-12 mb-10 items-center">
-              {/* ĐƠN VỊ TỔ CHỨC */}
-              <div className="flex flex-col items-center">
-                <div className="bg-green-600 text-white px-6 py-2 rounded-xl mb-4 font-semibold text-sm md:text-base">
-                  ĐƠN VỊ TỔ CHỨC
-                </div>
-
-                <div className="flex items-center space-x-6 bg-white rounded-lg">
-                  <img
-                    src={images.dz}
-                    alt="APED Logo"
-                    className="h-28 w-auto object-fill rounded-lg mr-2"
-                  />
-                  <img
-                    src={images.giz}
-                    alt="GIZ Logo"
-                    className="h-16 w-auto object-contain "
-                  />
-                  <img
-                    src={images.aped}
-                    alt="APED Logo"
-                    className="h-16 w-44 object-contain "
-                  />
-
-                </div>
-              </div>
-
-              {/* ĐƠN VỊ TƯ VẤN TRIỂN KHAI CHUỖI SỰ KIỆN */}
-              <div className="flex flex-col items-center">
-                <div className="bg-green-600 text-white px-6 py-2 rounded-xl mb-4 font-semibold text-sm md:text-base">
-                  ĐƠN VỊ TƯ VẤN TRIỂN KHAI CHUỖI SỰ KIỆN
-                </div>
-                <div className="h-28 flex items-center justify-center bg-white rounded-lg">
-                  <img
-                    src={images.bbu}
-                    alt="BambuUP Logo"
-                    className="h-16 w-auto object-contain p-3"
-                  />
-                </div>
-
-              </div>
-            </div>
+            <img
+              src={images.logo}
+              alt="Poster"
+              className="h-32 w-auto object-fill rounded-lg mr-2"
+            />
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="space-y-6">
                   <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                    <span className="block">TWIN</span>
-                    <span className="block bg-gradient-to-r from-green-300 to-blue-300 bg-clip-text text-transparent">
-                      TRANSITION
-                    </span>
-                    <span className="block text-3xl lg:text-4xl">CHALLENGE</span>
+                    <span className="block">TWIN TRANSITION</span>
+                    <span className="block ">CHALLENGE</span>
                   </h1>
 
-                  <div className="space-y-4">
-                    <p className="text-xl lg:text-2xl text-blue-100 font-medium">
-                      Chuyển đổi số & xanh cho SMEs Việt Nam
-                    </p>
-                    <p className="text-lg text-blue-100 leading-relaxed">
+                  <div className="space-y-4  border-l-8 border-x-cyan-300 pl-4">
+                    <p className="text-lg text-white leading-relaxed">
                       Chương trình hỗ trợ doanh nghiệp vừa và nhỏ trong hành trình
                       chuyển đổi số kết hợp với phát triển bền vững, hướng tới
                       tương lai xanh và thông minh.
@@ -261,7 +218,7 @@ function App() {
                   </a>
                   <a
                     href="#about"
-                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/80 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
                   >
                     Tìm hiểu dự án
                   </a>
@@ -301,19 +258,34 @@ function App() {
         </section>
       </Slide>
 
+      <Fade triggerOnce style={{ position: "relative", zIndex: 40 }}>
+        <section className="relative bg-transparent">
+          <img
+            src={images.gd}
+            alt="Decor"
+            className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 w-auto h-48 z-50"
+          />
+        </section>
+      </Fade>
+
+
       {/* About Project Section */}
       <Slide direction="left" triggerOnce>
-        <section id="about" className="py-20 bg-gray-50">
+
+        <section id="about" className="py-5 bg-gray-50">
+
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <div className="text-center relative items-center justify-center">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 relative z-10 mt-16">
                   Về Chương trình Twin Transition Challenge
                 </h2>
-                <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                <p className="text-center text-xl text-gray-900 max-w-4xl mx-auto leading-relaxed relative z-10 mt-2 mb-3">
                   Đồng hành cùng doanh nghiệp nhỏ và vừa Việt Nam kiến tạo tương lai xanh - số hóa hướng tới tăng trưởng bền vững và bao trùm.
                 </p>
               </div>
+
+
 
               <div className="grid lg:grid-cols-1 gap-8 mb-16">
                 <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
@@ -327,13 +299,13 @@ function App() {
                 </div>
               </div>
 
-              {/* Video Section */}
-              <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Poster
-                </h3>
 
-              </div>
+              {/* Poster Section */}
+              <img
+                src={images.poster}
+                alt="Poster"
+                className="w-auto object-fill rounded-lg mr-2"
+              />
             </div>
           </div>
         </section>
@@ -381,7 +353,6 @@ function App() {
                   >
                     <img
                       src={industry.image}
-                      alt="GIZ Logo"
                       className="h-56 w-auto object-contain flex items-center justify-center mx-auto mb-3"
                     />
                     <h3 className="text-2xl font-bold text-center mb-4">
@@ -650,12 +621,17 @@ function App() {
       <Slide direction="up" triggerOnce>
         <section
           id="prizes-section"
-          className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+          style={{ backgroundImage: `url(${images.bg})` }}
+          className="relative overflow-hidden text-white bg-cover bg-center bg-no-repeat pt-10 pb-10"
         >
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
+          {/* overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-700/60 via-emerald-600/40 to-green-500/40 z-10"></div>
+
+          {/* content */}
+          <div className="container mx-auto px-4 relative z-20">
+            <div className="max-w-8xl mx-auto">
               <div className="text-center">
-                <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white drop-shadow-lg">
                   Quyền lợi khi tham gia chương trình
                 </h2>
               </div>
@@ -664,11 +640,17 @@ function App() {
                 {prizes.map((prize, index) => (
                   <div
                     key={index}
-                    className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 text-center"
+                    className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 text-center shadow-lg hover:shadow-2xl transition duration-300"
                   >
-                    <div className="flex justify-center mb-4">{prize.icon}</div>
-                    <h3 className="text-lg font-bold mb-3">{prize.title}</h3>
-                    <p className="text-base text-purple-100 text-sm">{prize.description}</p>
+                    <div className="flex justify-center mb-4 text-green-300">
+                      {prize.icon}
+                    </div>
+                    <h3 className="text-lg font-bold mb-3 text-white">
+                      {prize.title}
+                    </h3>
+                    <p className="text-base text-white">
+                      {prize.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -676,6 +658,7 @@ function App() {
           </div>
         </section>
       </Slide>
+
 
       {/* Partners Section */}
       <Fade triggerOnce>
