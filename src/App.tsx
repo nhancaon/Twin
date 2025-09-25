@@ -177,7 +177,7 @@ function App() {
             <img
               src={images.logo}
               alt="Logo"
-              className="h-20 w-auto object-contain rounded-lg"
+              className="h-28 w-auto object-contain rounded-lg"
             />
           </motion.div>
 
@@ -195,8 +195,8 @@ function App() {
               </h1>
 
               <div className="space-y-4 border-l-8 border-cyan-300 pl-4">
-                <p className="text-lg leading-relaxed">
-                  Towards a greener and smarter future
+                <p className="text-xl leading-relaxed">
+                  Hướng tới một tương lai xanh hơn và thông minh hơn
                 </p>
               </div>
 
@@ -261,8 +261,11 @@ function App() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
-                Về Cuộc thi Twin Transition Challenge
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
+                Về Cuộc thi{" "}
+                <span className="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
+                  Twin Transition Challenge
+                </span>
               </h2>
               <p className="text-xl text-gray-900 max-w-4xl mx-auto leading-relaxed mb-3">
                 Đồng hành cùng doanh nghiệp nhỏ và vừa Việt Nam kiến tạo tương lai xanh - số hóa.
@@ -270,19 +273,17 @@ function App() {
             </div>
 
             <div className="grid lg:grid-cols-1 gap-8 mb-16">
-              <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <div className="max-w-2xl mx-auto bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                 <Target className="w-12 h-12 text-yellow-300 mb-6" />
                 <h3 className="text-2xl font-bold text-white mb-4">Mục Tiêu</h3>
                 <p className="text-lg text-white leading-relaxed">
-                  Tăng cường năng lực cạnh tranh cho DNNVV Việt Nam dựa trên việc sử dụng năng lượng và nguồn lực đầu vào hiệu quả thông qua chuyển đổi số và chuyển đổi xanh hướng tới giảm phát thải, phát triển bền vững
+                  Tăng cường năng lực cạnh tranh cho DNNVV Việt Nam dựa trên việc sử dụng năng lượng và nguồn lực đầu vào hiệu quả thông qua chuyển đổi số và chuyển đổi xanh hướng tới giảm phát thải, phát triển bền vững.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-
 
       {/* Target Section */}
       <Fade triggerOnce>
@@ -299,17 +300,25 @@ function App() {
               </div>
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-5">
                 <h3 className="text-2xl font-bold text-center mb-8">
-                  Để tham gia chương trình, các doanh nghiệp cần đáp ứng các tiêu chí sau đây:
+                  Doanh nghiệp là doanh nghiệp nhỏ và vừa Việt Nam theo tiêu chuẩn sau:
                 </h3>
                 <div className="grid md:grid-cols-1 gap-8">
                   <ul className="space-y-3">
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Doanh nghiệp có mô hình chuyển đổi kép (chuyển đổi số và xanh) đang hoặc đã triển khai
+                      Số lao động có tham gia bảo hiểm xã hội bình quân năm: Không quá 200 lao động
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Doanh nghiệp là doanh nghiệp nhỏ và vừa Việt Nam thuộc 3 lĩnh vực Chế biến nông sản, Dệt may và da giày, Chế biến gỗ và giấy
+                      Doanh thu: Doanh thu hàng năm không vượt quá 200 tỷ VNĐ
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
+                      Các&nbsp;<b className="text-yellow-300">công ty do phụ nữ làm chủ</b>&nbsp;được khuyến khích đặc biệt.
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
+                      Cuộc thi tập trung vào các doanh nghiệp nhỏ và vừa hoạt động trong&nbsp;<b className="text-yellow-300">ba lĩnh vực ưu tiên:</b>&nbsp;
                     </li>
                   </ul>
                 </div>
@@ -522,42 +531,6 @@ function App() {
           style={{ background: "transparent", border: "1px solid #ccc" }}
           title="Twin Transition Challenge Registration Form"
         />
-
-
-        {/* Title */}
-        <h1 className="text-yellow-300 text-2xl sm:text-4xl font-bold mt-10 mb-10 p-4 rounded-lg bg-white/10 text-center">
-          Tham gia 3 Cộng đồng chuyển đổi kép cho các ngành liên quan (Zalo group)
-        </h1>
-
-        {/* QR Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-20 text-center text-xl sm:text-3xl text-white font-semibold font-sans w-full px-4">
-          <div>
-            <p>CHẾ BIẾN NÔNG SẢN</p>
-            <img
-              src={images.qr_agri}
-              alt="Chế biến nông sản"
-              className="w-40 sm:w-auto h-40 sm:h-60 mx-auto object-contain mt-3"
-            />
-          </div>
-
-          <div>
-            <p>CHẾ BIẾN GỖ VÀ GIẤY</p>
-            <img
-              src={images.qr_wood}
-              alt="Chế biến gỗ và giấy"
-              className="w-40 sm:w-auto h-40 sm:h-60 mx-auto object-contain mt-3"
-            />
-          </div>
-
-          <div>
-            <p>DỆT MAY VÀ DA GIÀY</p>
-            <img
-              src={images.qr_silk}
-              alt="Dệt may và da giày"
-              className="w-40 sm:w-auto h-40 sm:h-60 mx-auto object-contain mt-3"
-            />
-          </div>
-        </div>
       </section>
 
 
@@ -633,6 +606,53 @@ function App() {
           </div>
         </section>
       </Fade>
+
+      <section className="relative bg-gray-50 pb-10 px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Title */}
+          <h1 className="text-white text-2xl sm:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-green-600 p-3 rounded-lg">
+            Tham gia 3 Cộng đồng chuyển đổi kép cho các ngành liên quan <br />
+            <span className="text-white">(Zalo group)</span>
+          </h1>
+
+          {/* QR Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-16 text-center">
+            {/* Item */}
+            <div className="backdrop-blur-md shadow-lg hover:scale-105 transform transition duration-300 bg-gradient-to-r from-blue-600 to-green-600 p-4 rounded-lg">
+              <p className="text-xl sm:text-2xl font-semibold text-white mb-4">
+                CHẾ BIẾN NÔNG SẢN
+              </p>
+              <img
+                src={images.qr_agri}
+                alt="Chế biến nông sản"
+                className="w-44 sm:w-56 h-44 sm:h-56 mx-auto object-contain"
+              />
+            </div>
+
+            <div className="backdrop-blur-md shadow-lg hover:scale-105 transform transition duration-300 bg-gradient-to-r from-blue-600 to-green-600 p-4 rounded-lg">
+              <p className="text-xl sm:text-2xl font-semibold text-white mb-4">
+                CHẾ BIẾN GỖ VÀ GIẤY
+              </p>
+              <img
+                src={images.qr_wood}
+                alt="Chế biến gỗ và giấy"
+                className="w-44 sm:w-56 h-44 sm:h-56 mx-auto object-contain"
+              />
+            </div>
+
+            <div className="backdrop-blur-md shadow-lg hover:scale-105 transform transition duration-300 bg-gradient-to-r from-blue-600 to-green-600 p-4 rounded-lg">
+              <p className="text-xl sm:text-2xl font-semibold text-white mb-4">
+                DỆT MAY VÀ DA GIÀY
+              </p>
+              <img
+                src={images.qr_silk}
+                alt="Dệt may và da giày"
+                className="w-44 sm:w-56 h-44 sm:h-56 mx-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <Fade triggerOnce>

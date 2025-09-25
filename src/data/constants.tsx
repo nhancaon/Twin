@@ -5,7 +5,15 @@ export const prizes = [
   {
     icon: <Gift className="w-12 h-12 text-yellow-300" />,
     title: "Giải thưởng",
-    description: "Giải thưởng với tổng giá trị tiền mặt lên đến 240 triệu đồng hiện kim cho doanh nghiệp chiến thắng",
+    description: (
+      <div>
+        <ul className="list-disc ml-2">
+          <li>Champion: 150.000.000</li>
+          <li>Á quân: 50.000.000</li>
+          <li>SMEs pitching: 4 x 40.000.000</li>
+        </ul>
+      </div>
+    ),
   },
   {
     icon: <Cpu className="w-12 h-12 text-cyan-300" />,
@@ -15,7 +23,7 @@ export const prizes = [
   {
     icon: <BookOpenCheck className="w-12 h-12 text-orange-400" />,
     title: "Đào tạo",
-    description: "Cơ hội nhận khóa đào tạo và tư vấn về chuyển đổi số trong năm 2025",
+    description: "Hỗ trợ để được ưu tiên lựa chọn nhận khóa đào tạo và tư vấn về chuyển đổi số trong năm 2025 từ ngân sách nhà nước (giá trị tư vấn 100tr đồng và đối ứng 100 triệu đồng, giá trị đào tạo khoảng 70 triệu đồng/một doanh nghiệp)",
   },
   {
     icon: <Star className="w-12 h-12 text-purple-400" />,
