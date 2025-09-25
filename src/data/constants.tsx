@@ -118,9 +118,9 @@ export const rawTimeline = [
   },
   {
     phase: "Giai đoạn 5",
-    title: "Sự kiện chính tại thành phố Hồ Chí Minh",
+    title: "Vòng thi Pitching",
     date: "22/10/2025",
-    description: "Twin Transition Growth Forum & Vòng thi Pitching",
+    description: "Top 6 doanh nghiệp trực tiếp trình bày trước hội đồng đánh giá",
   },
 ];
 

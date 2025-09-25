@@ -104,7 +104,7 @@ function App() {
             href="#"
             className="font-bold text-lg sm:text-xl text-blue-700 tracking-wide transition-transform duration-300 transform hover:scale-105"
           >
-            Twin Transition Impact Investment Forum
+            Twin Transition Challenge
           </a>
 
           {/* Desktop menu */}
@@ -112,7 +112,6 @@ function App() {
             <li><a href="#about" className="hover:text-blue-600">Giới thiệu</a></li>
             <li><a href="#prizes-section" className="hover:text-blue-600">Quyền lợi</a></li>
             <li><a href="#timeline-section" className="hover:text-blue-600">Lộ trình</a></li>
-            <li><a href="#events-section" className="hover:text-blue-600">Sự kiện chính</a></li>
             <li><a href="#q&a-section" className="hover:text-blue-600">Q&A</a></li>
             <li><a href="#contact-section" className="hover:text-blue-600">Liên hệ</a></li>
             <li>
@@ -141,7 +140,6 @@ function App() {
               <li><a href="#about" onClick={() => setOpen(false)}>Giới thiệu</a></li>
               <li><a href="#prizes-section" onClick={() => setOpen(false)}>Quyền lợi</a></li>
               <li><a href="#timeline-section" onClick={() => setOpen(false)}>Lộ trình</a></li>
-              <li><a href="#events-section" onClick={() => setOpen(false)}>Sự kiện chính</a></li>
               <li><a href="#q&a-section" onClick={() => setOpen(false)}>Q&A</a></li>
               <li><a href="#contact-section" onClick={() => setOpen(false)}>Liên hệ</a></li>
               <li>
@@ -194,7 +192,7 @@ function App() {
 
               <div className="space-y-4 border-l-8 border-cyan-300 pl-4">
                 <p className="text-xl leading-relaxed">
-                  Hướng tới một tương lai xanh hơn và thông minh hơn
+                  Hướng đến một tương lai xanh và thông minh hơn
                 </p>
               </div>
 
@@ -494,55 +492,6 @@ function App() {
         </section>
       </Fade>
 
-      {/* Events Section */}
-      <Slide direction="right" triggerOnce >
-        <section id="events-section" className="pb-2 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-4">
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
-                  Sự kiện chính
-                </h2>
-                <p className="text-xl text-gray-600">
-                  Hai sự kiện quan trọng diễn ra trong ngày 22/10/2025
-                </p>
-              </div>
-
-              <div className="grid lg:grid-cols-2 gap-4 mb-4">
-                <div className="bg-gradient-to-br from-blue-100 to-blue-200  00 p-8 rounded-2xl">
-                  <div className="flex items-center mb-6">
-                    <Globe className="w-12 h-12 text-blue-600 mr-4" />
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900">
-                        Twin Transition Growth Forum
-                      </h3>
-                      <p className="text-blue-600">Buổi sáng - 22/10/2025</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 mb-6">
-                    Một diễn đàn đa bên với sự tham gia của doanh nghiệp, chuyên gia, nhà đầu tư về chủ đề chuyển đổi kép.
-                  </p>
-                </div>
-
-                <div className="bg-gradient-to-br from-green-100 to-green-200 p-8 rounded-2xl">
-                  <div className="flex items-center mb-6">
-                    <Trophy className="w-12 h-12 text-green-600 mr-4" />
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900">
-                        Vòng thi Pitching
-                      </h3>
-                      <p className="text-green-600">Buổi chiều - 22/10/2025</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 mb-6">
-                    Top 6 doanh nghiệp trực tiếp trình bày trước hội đồng đánh giá
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </Slide>
 
       <section
         id="register"
