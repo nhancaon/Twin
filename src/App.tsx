@@ -354,7 +354,7 @@ function App() {
                 </h2>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-1">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-1">
                 {prizes.map((prize, index) => (
                   <div
                     key={index}
@@ -366,9 +366,7 @@ function App() {
                     <h3 className="text-lg font-bold mb-3 text-white">
                       {prize.title}
                     </h3>
-                    <p className="text-base text-white">
-                      {prize.description}
-                    </p>
+                    <p className="text-base text-white">{prize.description}</p>
                   </div>
                 ))}
               </div>
@@ -635,8 +633,6 @@ function App() {
           </div>
         </section>
       </Fade>
-
-
 
       {/* Footer */}
       <Fade triggerOnce>
