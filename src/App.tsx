@@ -190,9 +190,9 @@ function App() {
                 <span className="block">CHALLENGE</span>
               </h1>
 
-              <div className="space-y-4 border-l-8 border-cyan-300 pl-4">
+              <div className="space-y-4 border-l-8 border-lime-500 pl-4">
                 <p className="text-xl leading-relaxed">
-                  Hướng đến một tương lai xanh và thông minh hơn
+                  Chuyển đổi số và Đổi mới sáng tạo nhằm <br />  bảo vệ môi trường và khí hậu tại Việt Nam
                 </p>
               </div>
 
@@ -588,7 +588,7 @@ function App() {
         <div className="max-w-6xl mx-auto">
           {/* Title */}
           <h1 className="text-white text-2xl sm:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-green-600 p-3 rounded-lg">
-            Tham gia 3 Cộng đồng chuyển đổi kép cho các ngành liên quan <br />
+            Tham gia 3 cộng đồng chuyển đổi kép cho các ngành liên quan <br />
             <span className="text-white">(Zalo group)</span>
           </h1>
 
