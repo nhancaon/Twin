@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import images from "./assets";
 import { prizes, faqs, rawTimeline, industries } from "./data/constants";
 import { Fade, Slide } from "react-awesome-reveal";
+import { motion } from "framer-motion";
 import {
   ChevronRight,
   X,
@@ -159,7 +160,6 @@ function App() {
         )}
       </nav>
       {/* Hero Section */}
-
       <section
         style={{ backgroundImage: `url(${images.hero_bg})` }}
         className="relative overflow-hidden text-white bg-cover bg-center bg-no-repeat"
@@ -168,17 +168,27 @@ function App() {
 
         <div className="relative container mx-auto px-4 pt-6">
           {/* Logo */}
-          <div className="flex justify-start mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex justify-start mb-6"
+          >
             <img
               src={images.logo}
               alt="Logo"
               className="h-20 w-auto object-contain rounded-lg"
             />
-          </div>
+          </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text content */}
-            <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="space-y-8"
+            >
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
                 <span className="block">TWIN TRANSITION</span>
                 <span className="block">CHALLENGE</span>
@@ -191,36 +201,45 @@ function App() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-2">
-                <a
+                <motion.a
                   href="#register"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  className="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-700 font-semibold rounded-xl shadow-lg"
                 >
                   Đăng ký tham gia thử thách
                   <ChevronRight className="w-5 h-5 ml-2" />
-                </a>
-                <a
+                </motion.a>
+
+                <motion.a
                   href="#about"
-                  className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+                  whileHover={{ scale: 1.05 }}
+                  className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-xl backdrop-blur-sm"
                 >
                   Tìm hiểu dự án
-                </a>
+                </motion.a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Poster */}
-            <div className="flex justify-center mb-3">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="flex justify-center mb-3"
+            >
               <img
                 src={images.poster}
                 alt="Poster"
                 className="h-full max-h-[600px] w-auto object-contain rounded-2xl shadow-2xl"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
+
       {/* About Project Section */}
-      <section id="about" className="relative bg-gray-50 pt-32">
+      <section id="about" className="relative bg-gray-50 pt-12 sm:pt-20 lg:pt-32">
         {/* Wave nằm trên cùng */}
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -498,13 +517,14 @@ function App() {
         <iframe
           src="https://airtable.com/embed/appwQsjmzzh0RDaXr/pagByLmsjmGIl7xey/form"
           frameBorder="0"
-          onLoad={() => console.log("Airtable form loaded.")}
           width="100%"
-          height="1200"
-          className="max-w-3xl w-full rounded-lg shadow-lg"
+          className="w-full rounded-lg shadow-lg 
+             h-[3850px] sm:h-[3600px] lg:h-[3350px] 
+             max-w-full sm:max-w-4xl lg:max-w-6xl"
           style={{ background: "transparent", border: "1px solid #ccc" }}
           title="Twin Transition Challenge Registration Form"
-        ></iframe>
+        />
+
 
         {/* Title */}
         <h1 className="text-yellow-300 text-2xl sm:text-4xl font-bold mt-10 mb-10 p-4 rounded-lg bg-white/10 text-center">
