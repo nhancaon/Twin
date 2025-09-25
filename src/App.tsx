@@ -99,7 +99,7 @@ function App() {
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-md">
         <div className="container mx-auto px-4 flex items-center justify-between h-16">
           <a href="#" className="font-bold text-xl text-blue-700 tracking-wide transition-transform duration-300 transform hover:scale-105">
-            Twin Transition Challenge
+            Twin Transition Impact Investment Forum
           </a>
           <ul className="hidden md:flex space-x-6 font-medium text-gray-700">
             <li>
@@ -171,74 +171,60 @@ function App() {
       </nav>
       {/* Hero Section */}
       <Slide direction="down" triggerOnce>
-        <section style={{ backgroundImage: `url(${images.hero_bg})` }} className="relative overflow-hidden text-white bg-cover bg-center bg-no-repeat text-white">
+        <section
+          style={{ backgroundImage: `url(${images.hero_bg})` }}
+          className="relative overflow-hidden text-white bg-cover bg-center bg-no-repeat"
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-green-500/70 z-0"></div>
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-green-500/90 z-0"></div>
-          <div className="relative container mx-auto px-4 pt-4 lg:pt-6 pb-24 lg:pb-32">
-            <img
-              src={images.logo}
-              alt="Poster"
-              className="h-32 w-auto object-fill rounded-lg mr-2"
-            />
+          <div className="relative container mx-auto px-4 pt-6">
+            {/* Logo */}
+            <div className="flex justify-start mb-6">
+              <img
+                src={images.logo}
+                alt="Logo"
+                className="h-20 w-auto object-contain rounded-lg"
+              />
+            </div>
+
             <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Text content */}
               <div className="space-y-8">
-                <div className="space-y-6">
-                  <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                    <span className="block">TWIN TRANSITION</span>
-                    <span className="block ">CHALLENGE</span>
-                  </h1>
+                <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+                  <span className="block">TWIN TRANSITION</span>
+                  <span className="block">CHALLENGE</span>
+                </h1>
 
-                  <div className="space-y-4  border-l-8 border-x-cyan-300 pl-4 ">
-                    <p className="text-lg text-white leading-relaxed">
-                      Towards a greener and smarter future
-                    </p>
-                  </div>
+                <div className="space-y-4 border-l-8 border-cyan-300 pl-4">
+                  <p className="text-lg leading-relaxed">
+                    Towards a greener and smarter future
+                  </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 mb-2">
                   <a
                     href="#register"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >
                     Đăng ký tham gia thử thách
                     <ChevronRight className="w-5 h-5 ml-2" />
                   </a>
                   <a
                     href="#about"
-                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/80 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+                    className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
                   >
                     Tìm hiểu dự án
                   </a>
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="relative z-10 bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-green-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                        <Leaf className="w-8 h-8 text-white" />
-                      </div>
-                      <h3 className="text-2xl font-bold">GREEN</h3>
-                      <p className="text-sm text-blue-100">Bền vững</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                        <Cpu className="w-8 h-8 text-white" />
-                      </div>
-                      <h3 className="text-2xl font-bold">DIGITAL</h3>
-                      <p className="text-sm text-blue-100">Số hóa</p>
-                    </div>
-                  </div>
-                  <div className="mt-8 text-center">
-                    <div className="w-20 h-20 bg-gradient-to-r from-green-400 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <ArrowRight className="w-10 h-10 text-white transform rotate-90" />
-                    </div>
-                    <h3 className="text-xl font-bold">TRANSFORMATION</h3>
-                  </div>
-                </div>
-                <div className="absolute -top-4 -right-4 w-32 h-32 bg-green-400 rounded-full blur-2xl opacity-30"></div>
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-400 rounded-full blur-2xl opacity-30"></div>
+              {/* Poster */}
+              <div className="flex justify-center mb-3">
+                <img
+                  src={images.poster}
+                  alt="Poster"
+                  className="h-full max-h-[600px] w-auto object-contain rounded-2xl shadow-2xl"
+                />
               </div>
             </div>
           </div>
@@ -258,9 +244,7 @@ function App() {
 
       {/* About Project Section */}
       <Slide direction="left" triggerOnce>
-
-        <section id="about" className="py-5 bg-gray-50">
-
+        <section id="about" className="pt-5 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center relative items-center justify-center">
@@ -271,8 +255,6 @@ function App() {
                   Đồng hành cùng doanh nghiệp nhỏ và vừa Việt Nam kiến tạo tương lai xanh - số hóa.
                 </p>
               </div>
-
-
 
               <div className="grid lg:grid-cols-1 gap-8 mb-16">
                 <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
@@ -285,14 +267,6 @@ function App() {
                   </p>
                 </div>
               </div>
-
-
-              {/* Poster Section */}
-              <img
-                src={images.poster}
-                alt="Poster"
-                className="w-auto object-fill rounded-lg mr-2"
-              />
             </div>
           </div>
         </section>
@@ -302,7 +276,7 @@ function App() {
       <Fade triggerOnce>
         <section
           id="target-section"
-          className="py-20 bg-gradient-to-r from-blue-600 to-green-600 text-white"
+          className="py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white"
         >
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
@@ -328,17 +302,17 @@ function App() {
                   </ul>
                 </div>
               </div>
-              <div className="grid lg:grid-cols-3 gap-8 mb-5">
+              <div className="grid grid-cols-3 gap-3 mb-5">
                 {industries.map((industry, index) => (
                   <div
                     key={index}
-                    className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20"
+                    className="bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-6 border border-white/20"
                   >
                     <img
                       src={industry.image}
-                      className="h-56 w-auto object-contain flex items-center justify-center mx-auto mb-3"
+                      className="h-16 sm:h-24 lg:h-32 w-auto object-contain mx-auto mb-2"
                     />
-                    <h3 className="text-2xl font-bold text-center mb-4">
+                    <h3 className="text-xs sm:text-lg font-semibold text-center">
                       {industry.label}
                     </h3>
                   </div>
@@ -475,11 +449,11 @@ function App() {
 
       {/* Events Section */}
       <Slide direction="right" triggerOnce>
-        <section id="events-section" className="py-20 bg-white">
+        <section id="events-section" className="py-2 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <div className="text-center mb-4">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
                   Sự kiện chính
                 </h2>
                 <p className="text-xl text-gray-600">
@@ -487,7 +461,7 @@ function App() {
                 </p>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-8 mb-16">
+              <div className="grid lg:grid-cols-2 gap-4 mb-4">
                 <div className="bg-gradient-to-br from-blue-100 to-blue-200  00 p-8 rounded-2xl">
                   <div className="flex items-center mb-6">
                     <Globe className="w-12 h-12 text-blue-600 mr-4" />
@@ -525,25 +499,33 @@ function App() {
 
       <section
         id="register"
-        className="py-20 bg-gradient-to-r from-blue-600 to-green-600 flex flex-col items-center justify-center"
+        className="py-12 bg-gradient-to-r from-blue-600 to-green-600 flex flex-col items-center justify-center"
       >
+        {/* Form */}
         <iframe
           src="https://airtable.com/embed/appwQsjmzzh0RDaXr/pagByLmsjmGIl7xey/form"
           frameBorder="0"
           onLoad={() => console.log("Airtable form loaded.")}
-          width="70%"
-          height="3080"
+          width="100%"
+          height="1200"
+          className="max-w-3xl w-full rounded-lg shadow-lg"
           style={{ background: "transparent", border: "1px solid #ccc" }}
           title="Twin Transition Challenge Registration Form"
         ></iframe>
-        <h1 className="text-yellow-300 text-4xl font-bold mt-10 mb-10 p-4 rounded-lg bg-white/10 ">Tham gia 3 Cộng đồng chuyển đổi kép cho các ngành liên quan (Zalo group) </h1>
-        <div className="grid grid-cols-3 gap-28 text-center text-3xl text-white font-semibold font-sans">
+
+        {/* Title */}
+        <h1 className="text-yellow-300 text-2xl sm:text-4xl font-bold mt-10 mb-10 p-4 rounded-lg bg-white/10 text-center">
+          Tham gia 3 Cộng đồng chuyển đổi kép cho các ngành liên quan (Zalo group)
+        </h1>
+
+        {/* QR Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-20 text-center text-xl sm:text-3xl text-white font-semibold font-sans w-full px-4">
           <div>
             <p>CHẾ BIẾN NÔNG SẢN</p>
             <img
-              src={images.qr_agri} // thay bằng link QR thật
+              src={images.qr_agri}
               alt="Chế biến nông sản"
-              className="w-auto h-60 mx-auto object-contain mt-3"
+              className="w-40 sm:w-auto h-40 sm:h-60 mx-auto object-contain mt-3"
             />
           </div>
 
@@ -552,7 +534,7 @@ function App() {
             <img
               src={images.qr_wood}
               alt="Chế biến gỗ và giấy"
-              className="w-auto h-60 mx-auto object-contain mt-3"
+              className="w-40 sm:w-auto h-40 sm:h-60 mx-auto object-contain mt-3"
             />
           </div>
 
@@ -561,12 +543,12 @@ function App() {
             <img
               src={images.qr_silk}
               alt="Dệt may và da giày"
-              className="w-auto h-60 mx-auto object-contain mt-3"
+              className="w-40 sm:w-auto h-40 sm:h-60 mx-auto object-contain mt-3"
             />
           </div>
         </div>
-
       </section>
+
 
       {/* FAQ Section */}
       <Fade triggerOnce>
@@ -645,92 +627,61 @@ function App() {
 
       {/* Footer */}
       <Fade triggerOnce>
-        <footer id="contact-section" style={{ backgroundImage: `url(${images.txt})` }} className="relative overflow-hidden bg-cover bg-center bg-no-repeat text-white">
-          <div className="absolute inset-0 bg-black/30"></div>
+        <footer
+          id="contact-section"
+          style={{ backgroundImage: `url(${images.txt})` }}
+          className="relative overflow-hidden bg-cover bg-center bg-no-repeat text-white"
+        >
+          <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative z-10 container mx-auto px-4 mt-5">
-            <div className="grid md:grid-cols-4 gap-8 mb-12">
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
               <div>
-                <h3 className="text-2xl font-bold mb-4">Twin Transition Challenge</h3>
-                <p className="text-white mb-6">
-                  Chuyển đổi số & xanh cho SMEs Việt Nam
-                </p>
+                <h3 className="text-xl md:text-2xl font-bold mb-4">Twin Transition Challenge</h3>
+                <p className="mb-6">Chuyển đổi số & xanh cho SMEs Việt Nam</p>
                 <a href="https://www.facebook.com/bambuupnetwork" target="_blank" rel="noopener noreferrer">
                   <img
                     src={images.fb}
                     alt="Facebook"
-                    className="w-10 h-10 object-contain rounded-full"
+                    className="w-10 h-10 object-contain rounded-full hover:scale-110 transition-transform"
                   />
                 </a>
               </div>
 
               <div>
                 <h4 className="text-lg font-semibold mb-4">Dự án</h4>
-                <ul className="space-y-2 text-white">
-                  <li>
-                    <a
-                      href="#about"
-                      className="hover:text-white transition-colors"
-                    >
-                      Giới thiệu
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#target-section"
-                      className="hover:text-white transition-colors"
-                    >
-                      Đối tượng
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#prizes-section" className="hover:text-white transition-colors">
-                      Quyền lợi
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#timeline-section" className="hover:text-white transition-colors">
-                      Lộ trình
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#events-section" className="hover:text-white transition-colors">
-                      Sự kiện chính
-                    </a>
-                  </li>
+                <ul className="space-y-1">
+                  <li><a href="#about" className="hover:text-yellow-300">Giới thiệu</a></li>
+                  <li><a href="#target-section" className="hover:text-yellow-300">Đối tượng</a></li>
+                  <li><a href="#prizes-section" className="hover:text-yellow-300">Quyền lợi</a></li>
+                  <li><a href="#timeline-section" className="hover:text-yellow-300">Lộ trình</a></li>
+                  <li><a href="#events-section" className="hover:text-yellow-300">Sự kiện chính</a></li>
                 </ul>
               </div>
+
               <div>
                 <h4 className="text-lg font-semibold mb-4">Hỗ trợ</h4>
-                <ul className="space-y-2 text-white">
-                  <li>
-                    <a href="#register" className="hover:text-white transition-colors">
-                      Đăng ký tham gia
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#q&a-section" className="hover:text-white transition-colors">
-                      FAQ
-                    </a>
-                  </li>
+                <ul className="space-y-1">
+                  <li><a href="#register" className="hover:text-yellow-300">Đăng ký tham gia</a></li>
+                  <li><a href="#q&a-section" className="hover:text-yellow-300">FAQ</a></li>
                 </ul>
               </div>
+
               <div>
                 <h4 className="text-lg font-semibold mb-4">Ban tổ chức</h4>
-                <div className="space-y-2 text-white">
-                  <p>Email: research@bambuup.com</p>
-                  <p>Ms. Hà Linh (083 911 1104)</p>
-                  <p>Ms. Hạnh Nguyễn (083.9918.445)</p>
+                <div className="space-y-1">
+                  <p>Email: <a href="mailto:research@bambuup.com" className="hover:text-yellow-300">research@bambuup.com</a></p>
+                  <p>Ms. Hà Linh: <a href="tel:0839111104" className="hover:text-yellow-300">083 911 1104</a></p>
+                  <p>Ms. Hạnh Nguyễn: <a href="tel:0839918445" className="hover:text-yellow-300">083 9918 445</a></p>
                 </div>
               </div>
             </div>
 
-            <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-              <p>
-                &copy; 2025 Twin Transition Challenge.
-              </p>
+            <div className="border-t border-gray-700 pt-6 text-center text-gray-300 text-sm">
+              <p>&copy; 2025 Twin Transition Challenge.</p>
             </div>
           </div>
         </footer>
+
       </Fade>
     </div>
   );
