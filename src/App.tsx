@@ -155,7 +155,7 @@ function App() {
                 href="#contact-section"
                 className="hover:text-blue-600 transition-colors"
               >
-                Contact
+                Liên hệ
               </a>
             </li>
             <li>
