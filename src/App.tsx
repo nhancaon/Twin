@@ -4,10 +4,9 @@ import { prizes, faqs, rawTimeline, industries } from "./data/constants";
 import { Fade, Slide } from "react-awesome-reveal";
 import {
   ChevronRight,
-  Leaf,
-  Cpu,
+  X,
   Trophy,
-  ArrowRight,
+  Menu,
   CheckCircle,
   Target,
   Globe,
@@ -28,6 +27,7 @@ interface FormData {
 
 function App() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [open, setOpen] = useState(false);
 
   const getTimelineStatus = (dateString: string) => {
     const currentDate = new Date();
@@ -98,66 +98,23 @@ function App() {
       {/* Navigation Menu */}
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-md">
         <div className="container mx-auto px-4 flex items-center justify-between h-16">
-          <a href="#" className="font-bold text-xl text-blue-700 tracking-wide transition-transform duration-300 transform hover:scale-105">
+          {/* Logo / Brand */}
+          <a
+            href="#"
+            className="font-bold text-lg sm:text-xl text-blue-700 tracking-wide transition-transform duration-300 transform hover:scale-105"
+          >
             Twin Transition Impact Investment Forum
           </a>
+
+          {/* Desktop menu */}
           <ul className="hidden md:flex space-x-6 font-medium text-gray-700">
-            <li>
-              <a
-                href="#about"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Giới thiệu
-              </a>
-            </li>
-            <li>
-              <a
-                href="#target-section"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Đối tượng
-              </a>
-            </li>
-            <li>
-              <a
-                href="#prizes-section"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Quyền lợi
-              </a>
-            </li>
-            <li>
-              <a
-                href="#timeline-section"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Lộ trình
-              </a>
-            </li>
-            <li>
-              <a
-                href="#events-section"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Sự kiện chính
-              </a>
-            </li>
-            <li>
-              <a
-                href="#q&a-section"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Q&A
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact-section"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Liên hệ
-              </a>
-            </li>
+            <li><a href="#about" className="hover:text-blue-600">Giới thiệu</a></li>
+            <li><a href="#target-section" className="hover:text-blue-600">Đối tượng</a></li>
+            <li><a href="#prizes-section" className="hover:text-blue-600">Quyền lợi</a></li>
+            <li><a href="#timeline-section" className="hover:text-blue-600">Lộ trình</a></li>
+            <li><a href="#events-section" className="hover:text-blue-600">Sự kiện chính</a></li>
+            <li><a href="#q&a-section" className="hover:text-blue-600">Q&A</a></li>
+            <li><a href="#contact-section" className="hover:text-blue-600">Liên hệ</a></li>
             <li>
               <a
                 href="#register"
@@ -167,110 +124,146 @@ function App() {
               </a>
             </li>
           </ul>
+
+          {/* Mobile button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-gray-700 focus:outline-none"
+          >
+            {open ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
+
+        {/* Mobile menu dropdown */}
+        {open && (
+          <div className="md:hidden bg-white/95 backdrop-blur shadow-lg">
+            <ul className="flex flex-col items-center space-y-4 py-6 font-medium text-gray-700">
+              <li><a href="#about" onClick={() => setOpen(false)}>Giới thiệu</a></li>
+              <li><a href="#target-section" onClick={() => setOpen(false)}>Đối tượng</a></li>
+              <li><a href="#prizes-section" onClick={() => setOpen(false)}>Quyền lợi</a></li>
+              <li><a href="#timeline-section" onClick={() => setOpen(false)}>Lộ trình</a></li>
+              <li><a href="#events-section" onClick={() => setOpen(false)}>Sự kiện chính</a></li>
+              <li><a href="#q&a-section" onClick={() => setOpen(false)}>Q&A</a></li>
+              <li><a href="#contact-section" onClick={() => setOpen(false)}>Liên hệ</a></li>
+              <li>
+                <a
+                  href="#register"
+                  className="bg-green-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-green-700 hover:shadow-lg font-semibold"
+                  onClick={() => setOpen(false)}
+                >
+                  Register
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
       </nav>
       {/* Hero Section */}
-      <Slide direction="down" triggerOnce>
-        <section
-          style={{ backgroundImage: `url(${images.hero_bg})` }}
-          className="relative overflow-hidden text-white bg-cover bg-center bg-no-repeat"
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-green-500/70 z-0"></div>
 
-          <div className="relative container mx-auto px-4 pt-6">
-            {/* Logo */}
-            <div className="flex justify-start mb-6">
-              <img
-                src={images.logo}
-                alt="Logo"
-                className="h-20 w-auto object-contain rounded-lg"
-              />
-            </div>
+      <section
+        style={{ backgroundImage: `url(${images.hero_bg})` }}
+        className="relative overflow-hidden text-white bg-cover bg-center bg-no-repeat"
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-green-500 z-0"></div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Text content */}
-              <div className="space-y-8">
-                <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                  <span className="block">TWIN TRANSITION</span>
-                  <span className="block">CHALLENGE</span>
-                </h1>
-
-                <div className="space-y-4 border-l-8 border-cyan-300 pl-4">
-                  <p className="text-lg leading-relaxed">
-                    Towards a greener and smarter future
-                  </p>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4 mb-2">
-                  <a
-                    href="#register"
-                    className="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                  >
-                    Đăng ký tham gia thử thách
-                    <ChevronRight className="w-5 h-5 ml-2" />
-                  </a>
-                  <a
-                    href="#about"
-                    className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
-                  >
-                    Tìm hiểu dự án
-                  </a>
-                </div>
-              </div>
-
-              {/* Poster */}
-              <div className="flex justify-center mb-3">
-                <img
-                  src={images.poster}
-                  alt="Poster"
-                  className="h-full max-h-[600px] w-auto object-contain rounded-2xl shadow-2xl"
-                />
-              </div>
-            </div>
+        <div className="relative container mx-auto px-4 pt-6">
+          {/* Logo */}
+          <div className="flex justify-start mb-6">
+            <img
+              src={images.logo}
+              alt="Logo"
+              className="h-20 w-auto object-contain rounded-lg"
+            />
           </div>
-        </section>
-      </Slide>
 
-      <Fade triggerOnce style={{ position: "relative", zIndex: 40 }}>
-        <section className="relative bg-transparent">
-          <img
-            src={images.gd}
-            alt="Decor"
-            className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 w-auto h-48 z-50"
-          />
-        </section>
-      </Fade>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text content */}
+            <div className="space-y-8">
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+                <span className="block">TWIN TRANSITION</span>
+                <span className="block">CHALLENGE</span>
+              </h1>
 
-
-      {/* About Project Section */}
-      <Slide direction="left" triggerOnce>
-        <section id="about" className="pt-5 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center relative items-center justify-center">
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 relative z-10 mt-16">
-                  Về Cuộc thi Twin Transition Challenge
-                </h2>
-                <p className="text-center text-xl text-gray-900 max-w-4xl mx-auto leading-relaxed relative z-10 mt-2 mb-3">
-                  Đồng hành cùng doanh nghiệp nhỏ và vừa Việt Nam kiến tạo tương lai xanh - số hóa.
+              <div className="space-y-4 border-l-8 border-cyan-300 pl-4">
+                <p className="text-lg leading-relaxed">
+                  Towards a greener and smarter future
                 </p>
               </div>
 
-              <div className="grid lg:grid-cols-1 gap-8 mb-16">
-                <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                  <Target className="w-12 h-12 text-yellow-300 mb-6" />
-                  <h3 className="text-2xl font-bold text-white mb-4">
-                    Mục Tiêu
-                  </h3>
-                  <p className="text-lg text-white leading-relaxed">
-                    Tăng cường năng lực cạnh tranh cho DNNVV Việt Nam dựa trên việc sử dụng năng lượng và nguồn lực đầu vào hiệu quả thông qua chuyển đổi số và chuyển đổi xanh hướng tới giảm phát thải, phát triển bền vững
-                  </p>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 mb-2">
+                <a
+                  href="#register"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  Đăng ký tham gia thử thách
+                  <ChevronRight className="w-5 h-5 ml-2" />
+                </a>
+                <a
+                  href="#about"
+                  className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/80 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+                >
+                  Tìm hiểu dự án
+                </a>
+              </div>
+            </div>
+
+            {/* Poster */}
+            <div className="flex justify-center mb-3">
+              <img
+                src={images.poster}
+                alt="Poster"
+                className="h-full max-h-[600px] w-auto object-contain rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Project Section */}
+      <section id="about" className="relative bg-gray-50 pt-32">
+        {/* Wave nằm trên cùng */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <defs>
+              <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#00C351" />
+                <stop offset="100%" stopColor="#00aaff" />
+              </linearGradient>
+            </defs>
+            <path
+              fill="url(#waveGradient)"
+              fillOpacity="1"
+              d="M0,32L48,48C96,64,192,96,288,96C384,96,480,64,576,48C672,32,768,32,864,32C960,32,1056,32,1152,58.7C1248,85,1344,139,1392,165.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+            />
+          </svg>
+        </div>
+
+        {/* Nội dung */}
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+                Về Cuộc thi Twin Transition Challenge
+              </h2>
+              <p className="text-xl text-gray-900 max-w-4xl mx-auto leading-relaxed mb-3">
+                Đồng hành cùng doanh nghiệp nhỏ và vừa Việt Nam kiến tạo tương lai xanh - số hóa.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-1 gap-8 mb-16">
+              <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <Target className="w-12 h-12 text-yellow-300 mb-6" />
+                <h3 className="text-2xl font-bold text-white mb-4">Mục Tiêu</h3>
+                <p className="text-lg text-white leading-relaxed">
+                  Tăng cường năng lực cạnh tranh cho DNNVV Việt Nam dựa trên việc sử dụng năng lượng và nguồn lực đầu vào hiệu quả thông qua chuyển đổi số và chuyển đổi xanh hướng tới giảm phát thải, phát triển bền vững
+                </p>
               </div>
             </div>
           </div>
-        </section>
-      </Slide>
+        </div>
+      </section>
+
+
 
       {/* Target Section */}
       <Fade triggerOnce>
@@ -367,7 +360,7 @@ function App() {
 
       {/* Timeline Section */}
       <Fade triggerOnce>
-        <section id="timeline-section" className="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <section id="timeline-section" className="py-10 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-10">
@@ -449,7 +442,7 @@ function App() {
 
       {/* Events Section */}
       <Slide direction="right" triggerOnce>
-        <section id="events-section" className="py-2 bg-white">
+        <section id="events-section" className="pb-2 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-4">
@@ -667,23 +660,23 @@ function App() {
               </div>
 
               <div>
-                <h4 className="text-lg font-semibold mb-4">Ban tổ chức</h4>
+                <h4 className="text-lg font-semibold mb-1">Ban tổ chức</h4>
                 <div className="space-y-1">
                   <p>Email: <a href="mailto:research@bambuup.com" className="hover:text-yellow-300">research@bambuup.com</a></p>
-                  <p>Ms. Hà Linh: <a href="tel:0839111104" className="hover:text-yellow-300">083 911 1104</a></p>
-                  <p>Ms. Hạnh Nguyễn: <a href="tel:0839918445" className="hover:text-yellow-300">083 9918 445</a></p>
+                  <p>Ms. Hà Linh: 083 911 1104</p>
+                  <p>Ms. Hạnh Nguyễn: 083 9918 445</p>
                 </div>
               </div>
             </div>
 
-            <div className="border-t border-gray-700 pt-6 text-center text-gray-300 text-sm">
+            <div className="border-t border-gray-700 pt-6 text-center text-gray-300 text-sm mb-2">
               <p>&copy; 2025 Twin Transition Challenge.</p>
             </div>
           </div>
-        </footer>
+        </footer >
 
-      </Fade>
-    </div>
+      </Fade >
+    </div >
   );
 }
 
