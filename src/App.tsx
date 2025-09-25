@@ -121,7 +121,7 @@ function App() {
                 href="#register"
                 className="bg-green-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-green-700 hover:shadow-lg transition-transform transform hover:scale-105 font-semibold"
               >
-                Register
+                Đăng ký
               </a>
             </li>
           </ul>
