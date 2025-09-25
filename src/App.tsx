@@ -110,7 +110,6 @@ function App() {
           {/* Desktop menu */}
           <ul className="hidden md:flex space-x-6 font-medium text-gray-700">
             <li><a href="#about" className="hover:text-blue-600">Giới thiệu</a></li>
-            <li><a href="#target-section" className="hover:text-blue-600">Đối tượng</a></li>
             <li><a href="#prizes-section" className="hover:text-blue-600">Quyền lợi</a></li>
             <li><a href="#timeline-section" className="hover:text-blue-600">Lộ trình</a></li>
             <li><a href="#events-section" className="hover:text-blue-600">Sự kiện chính</a></li>
@@ -140,7 +139,6 @@ function App() {
           <div className="md:hidden bg-white/95 backdrop-blur shadow-lg">
             <ul className="flex flex-col items-center space-y-4 py-6 font-medium text-gray-700">
               <li><a href="#about" onClick={() => setOpen(false)}>Giới thiệu</a></li>
-              <li><a href="#target-section" onClick={() => setOpen(false)}>Đối tượng</a></li>
               <li><a href="#prizes-section" onClick={() => setOpen(false)}>Quyền lợi</a></li>
               <li><a href="#timeline-section" onClick={() => setOpen(false)}>Lộ trình</a></li>
               <li><a href="#events-section" onClick={() => setOpen(false)}>Sự kiện chính</a></li>
@@ -272,21 +270,62 @@ function App() {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-1 gap-8 mb-16">
-              <div className="max-w-2xl mx-auto bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+              {/* Thẻ Mục Tiêu */}
+              <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                 <Target className="w-12 h-12 text-yellow-300 mb-6" />
                 <h3 className="text-2xl font-bold text-white mb-4">Mục Tiêu</h3>
                 <p className="text-lg text-white leading-relaxed">
                   Tăng cường năng lực cạnh tranh cho DNNVV Việt Nam dựa trên việc sử dụng năng lượng và nguồn lực đầu vào hiệu quả thông qua chuyển đổi số và chuyển đổi xanh hướng tới giảm phát thải, phát triển bền vững.
                 </p>
               </div>
+
+              {/* Thẻ Đối tượng tham gia */}
+              <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <Target className="w-12 h-12 text-blue-500 mb-6" />
+                <h3 className="text-2xl font-bold text-black mb-4">Đối tượng tham gia</h3>
+                <p className="text-lg text-black leading-relaxed mb-6">
+                  Doanh nghiệp là doanh nghiệp nhỏ và vừa Việt Nam theo tiêu chuẩn sau:
+                </p>
+
+                <ul className="space-y-4">
+                  {[
+                    "Số lao động có tham gia bảo hiểm xã hội bình quân năm: Không quá 200 lao động",
+                    "Doanh thu: Doanh thu hàng năm không vượt quá 200 tỷ VNĐ",
+                    "Doanh nghiệp có mô hình chuyển đổi kép (chuyển đổi số và xanh) đang hoặc đã triển khai",
+                    "Các công ty do phụ nữ làm chủ được khuyến khích đặc biệt.",
+                    "Cuộc thi tập trung vào các doanh nghiệp nhỏ và vừa hoạt động trong ba lĩnh vực ưu tiên Chế biến nông sản, Dệt may và da giày, Chế biến gỗ và giấy"
+                  ].map((text, i) => (
+                    <li key={i} className="grid grid-cols-[auto_1fr] gap-3">
+                      <CheckCircle className="w-5 h-5 text-black-300 mt-1" />
+                      <span dangerouslySetInnerHTML={{ __html: text.includes("công ty") || text.includes("ba lĩnh vực") ? text.replace(/(công ty|ba lĩnh vực)/g, `<b class="text-blue-500">$1</b>`) : text }} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Grid industries */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+              {industries.map((industry, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-500/10 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20 flex flex-col items-center"
+                >
+                  <img
+                    src={industry.image}
+                    className="h-16 sm:h-24 lg:h-48 w-auto object-contain mb-2"
+                  />
+                  <h3 className="text-xs sm:text-lg font-semibold text-center">{industry.label}</h3>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Target Section */}
-      <Fade triggerOnce>
+      {/* <Fade triggerOnce >
         <section
           id="target-section"
           className="py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white"
@@ -314,6 +353,10 @@ function App() {
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
+                      Doanh nghiệp có mô hình chuyển đổi kép (chuyển đổi số và xanh) đang hoặc đã triển khai
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
                       Các&nbsp;<b className="text-yellow-300">công ty do phụ nữ làm chủ</b>&nbsp;được khuyến khích đặc biệt.
                     </li>
                     <li className="flex items-center">
@@ -323,29 +366,14 @@ function App() {
                   </ul>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-3 mb-5">
-                {industries.map((industry, index) => (
-                  <div
-                    key={index}
-                    className="bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-6 border border-white/20"
-                  >
-                    <img
-                      src={industry.image}
-                      className="h-16 sm:h-24 lg:h-32 w-auto object-contain mx-auto mb-2"
-                    />
-                    <h3 className="text-xs sm:text-lg font-semibold text-center">
-                      {industry.label}
-                    </h3>
-                  </div>
-                ))}
-              </div>
+
             </div>
           </div>
         </section>
-      </Fade>
+      </Fade> */}
 
       {/* Prizes Section */}
-      <Slide direction="up" triggerOnce>
+      <Slide direction="up" triggerOnce >
         <section
           id="prizes-section"
           style={{ backgroundImage: `url(${images.bg})` }}
@@ -385,7 +413,7 @@ function App() {
       </Slide>
 
       {/* Timeline Section */}
-      <Fade triggerOnce>
+      <Fade triggerOnce >
         <section id="timeline-section" className="py-10 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
@@ -467,7 +495,7 @@ function App() {
       </Fade>
 
       {/* Events Section */}
-      <Slide direction="right" triggerOnce>
+      <Slide direction="right" triggerOnce >
         <section id="events-section" className="pb-2 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
