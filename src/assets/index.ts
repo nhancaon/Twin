@@ -14,6 +14,10 @@ import logo from './logo.jpg'
 import hero_bg from './hero_bg.png'
 import gd from './g&d.png'
 import e1 from './e1.png'
+import fb from './fb.png'
+import qr_agri from './qr_agri.png'
+import qr_silk from './qr_silk.png'
+import qr_wood from './qr_wood.png'
 
 const images = {
   giz,
@@ -31,7 +35,11 @@ const images = {
   logo,
   hero_bg,
   gd,
-  e1
+  e1,
+  fb,
+  qr_agri,
+  qr_silk,
+  qr_wood
 };
 
 export default images;
