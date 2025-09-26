@@ -90,31 +90,31 @@ export const faqs = [
 
 export const rawTimeline = [
   {
-    phase: "Giai đoạn 1",
+    // phase: "Giai đoạn 1",
     title: "Vòng nộp đơn",
     date: "26/09/2025 - 08/10/2025",
     description: "Các doanh nghiệp sẽ hoàn thiện và gửi hồ sơ dự án chuyển đổi kép theo hướng dẫn.",
   },
   {
-    phase: "Giai đoạn 2",
+    // phase: "Giai đoạn 2",
     title: "Phiên thông tin trực tuyến (Online Information Session)",
     date: "30/09/2025",
     description: "Phiên thông tin giải đáp chi tiết các thắc mắc cho các doanh nghiệp.",
   },
   {
-    phase: "Giai đoạn 3",
+    // phase: "Giai đoạn 3",
     title: "Công bố kết quả vòng đơn",
     date: "12/10/2025",
     description: "Công bố danh sách các doanh nghiệp xuất sắc tham gia vòng thi Pitching.",
   },
   {
-    phase: "Giai đoạn 4",
+    // phase: "Giai đoạn 4",
     title: "Phiên định hướng & hoạt động mentoring 1-1",
     date: "13/10/2025 - 20/10/2025",
     description: "Các doanh nghiệp lọt vào danh sách sẽ nhận phản hồi và hướng dẫn để chuẩn bị cho bài pitching.",
   },
   {
-    phase: "Giai đoạn 5",
+    // phase: "Giai đoạn 5",
     title: "Vòng thi Pitching",
     date: "22/10/2025",
     description: "Top 6 doanh nghiệp trực tiếp trình bày trước hội đồng đánh giá",

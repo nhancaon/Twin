@@ -425,7 +425,7 @@ function App() {
                     <div className="ml-10 flex-1 bg-white p-8 rounded-2xl shadow-xl border border-gray-100 transition-shadow duration-300 group-hover:shadow-2xl">
                       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                         <div className="flex-1">
-                          <span
+                          {/* <span
                             className={`inline-block px-4 py-1 rounded-full text-sm font-semibold mb-3 tracking-wide ${item.status === "active"
                               ? "bg-blue-100 text-blue-700"
                               : item.status === "completed"
@@ -434,7 +434,7 @@ function App() {
                               }`}
                           >
                             {item.phase}
-                          </span>
+                          </span> */}
                           <h3 className="text-3xl font-extrabold text-gray-900 mb-3 leading-tight">
                             {item.title}
                           </h3>
