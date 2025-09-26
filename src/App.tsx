@@ -148,7 +148,7 @@ function App() {
                   className="bg-green-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-green-700 hover:shadow-lg font-semibold"
                   onClick={() => setOpen(false)}
                 >
-                  Register
+                  Đăng ký
                 </a>
               </li>
             </ul>
@@ -304,7 +304,7 @@ function App() {
             </div>
 
             {/* Grid industries */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+            <div className="grid grid-cols-3 gap-4 mb-16">
               {industries.map((industry, index) => (
                 <div
                   key={index}
@@ -321,54 +321,6 @@ function App() {
           </div>
         </div>
       </section >
-
-      {/* Target Section */}
-      {/* <Fade triggerOnce >
-        <section
-          id="target-section"
-          className="py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white"
-        >
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-6">
-                <h2 className="text-4xl lg:text-5xl font-bold">
-                  Đối tượng tham gia
-                </h2>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 mb-5">
-                <h3 className="text-2xl font-bold text-center mb-8">
-                  Doanh nghiệp là doanh nghiệp nhỏ và vừa Việt Nam theo tiêu chuẩn sau:
-                </h3>
-                <div className="grid md:grid-cols-1 gap-8">
-                  <ul className="space-y-3">
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Số lao động có tham gia bảo hiểm xã hội bình quân năm: Không quá 200 lao động
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Doanh thu: Doanh thu hàng năm không vượt quá 200 tỷ VNĐ
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Doanh nghiệp có mô hình chuyển đổi kép (chuyển đổi số và xanh) đang hoặc đã triển khai
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Các&nbsp;<b className="text-yellow-300">công ty do phụ nữ làm chủ</b>&nbsp;được khuyến khích đặc biệt.
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                      Cuộc thi tập trung vào các doanh nghiệp nhỏ và vừa hoạt động trong&nbsp;<b className="text-yellow-300">ba lĩnh vực ưu tiên:</b>&nbsp;
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-      </Fade> */}
 
       {/* Prizes Section */}
       <Slide direction="up" triggerOnce >
