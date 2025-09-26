@@ -287,16 +287,31 @@ function App() {
                 </p>
 
                 <ul className="space-y-4">
+                  {/* List có CheckCircle */}
                   {[
                     "Số lao động có tham gia bảo hiểm xã hội bình quân năm: Không quá 200 lao động",
-                    "Doanh thu: Doanh thu hàng năm không vượt quá 200 tỷ VNĐ",
+                    "Doanh thu: Doanh thu hàng năm không vượt quá 200 tỷ VNĐ"
+                  ].map((text, i) => (
+                    <li key={i} className="grid grid-cols-[auto_1fr] gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1" />
+                      <span dangerouslySetInnerHTML={{ __html: text }} />
+                    </li>
+                  ))}
+                </ul>
+
+                <ul className="space-y-4 mt-4">
+                  {/* List không có CheckCircle */}
+                  {[
                     "Doanh nghiệp có mô hình chuyển đổi kép (chuyển đổi số và xanh) đang hoặc đã triển khai",
                     "Các công ty do phụ nữ làm chủ được khuyến khích đặc biệt.",
                     "Cuộc thi tập trung vào các doanh nghiệp nhỏ và vừa hoạt động trong ba lĩnh vực ưu tiên Chế biến nông sản, Dệt may và da giày, Chế biến gỗ và giấy"
                   ].map((text, i) => (
-                    <li key={i} className="grid grid-cols-[auto_1fr] gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-1" />
-                      <span dangerouslySetInnerHTML={{ __html: text.includes("công ty") || text.includes("ba lĩnh vực") ? text.replace(/(công ty|ba lĩnh vực)/g, `<b class="text-blue-500">$1</b>`) : text }} />
+                    <li key={i} className="grid grid-cols-1 gap-3 text-lg">
+                      <span dangerouslySetInnerHTML={{
+                        __html: text.includes("công ty") || text.includes("ba lĩnh vực")
+                          ? text.replace(/(công ty|ba lĩnh vực)/g, `<b class="text-blue-500">$1</b>`)
+                          : text
+                      }} />
                     </li>
                   ))}
                 </ul>

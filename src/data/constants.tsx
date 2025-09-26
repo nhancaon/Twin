@@ -23,7 +23,7 @@ export const prizes = [
   {
     icon: <BookOpenCheck className="w-12 h-12 text-orange-400" />,
     title: "Đào tạo",
-    description: "Hỗ trợ để được ưu tiên lựa chọn nhận khóa đào tạo và tư vấn về chuyển đổi số trong năm 2025 từ ngân sách nhà nước (giá trị tư vấn 100tr đồng và đối ứng 100 triệu đồng, giá trị đào tạo khoảng 70 triệu đồng/một doanh nghiệp)",
+    description: "Hỗ trợ để được ưu tiên lựa chọn nhận khóa đào tạo và tư vấn về chuyển đổi số trong năm 2025 từ ngân sách nhà nước",
   },
   {
     icon: <Star className="w-12 h-12 text-purple-400" />,
@@ -40,7 +40,7 @@ export const prizes = [
 export const faqs = [
   {
     question: "Doanh nghiệp cần chuẩn bị những hồ sơ gì để đăng ký tham gia?",
-    intro: "Doanh nghiệp cần điền thông tin theo mẫu và chuẩn bị tài liệu (bản trình bày, video) bao gồm các thông tin:",
+    intro: "Doanh nghiệp cần điền thông tin theo mẫu và chuẩn bị file PDF slide trình bày (không quá 10 trang) bao gồm các nội dung:",
     answer: [
       {
         title: "Giới thiệu doanh nghiệp",
@@ -123,6 +123,6 @@ export const rawTimeline = [
 
 export const industries = [
   { value: "food-processing", label: "Chế biến nông sản", image: images.agri },
-  { value: "textile", label: "Dệt may", image: images.silk },
-  { value: "wood-paper", label: "Gỗ và giấy", image: images.wood },
+  { value: "textile", label: "Dệt may và da giày", image: images.silk },
+  { value: "wood-paper", label: "Chế biến gỗ và giấy", image: images.wood },
 ];
