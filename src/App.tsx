@@ -317,6 +317,7 @@ function App() {
               <ul className="space-y-4 mt-4 text-lg text-black  ">
                 {[
                   "Các công ty do phụ nữ làm chủ được khuyến khích đặc biệt.",
+                  "Doanh nghiệp có mô hình chuyển đổi kép (chuyển đổi số và xanh) đang hoặc đã triển khai",
                   "Cuộc thi tập trung vào các doanh nghiệp nhỏ và vừa hoạt động trong ba lĩnh vực ưu tiên: Chế biến nông sản, Dệt may và da giày, Chế biến gỗ và giấy"
                 ].map((text, i) => (
                   <li key={i}>{text}</li>
