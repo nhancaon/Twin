@@ -252,90 +252,90 @@ function App() {
             />
           </svg>
         </div>
-
-        {/* Nội dung */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center">
+            {/* Title */}
+            <div className="text-center mb-12">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
                 Về Cuộc thi{" "}
                 <span className="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
                   Twin Transition Challenge
                 </span>
               </h2>
-              <p className="text-xl text-gray-900 max-w-4xl mx-auto leading-relaxed mb-3">
+              <p className="text-xl text-gray-900 max-w-4xl mx-auto leading-relaxed">
                 Đồng hành cùng doanh nghiệp nhỏ và vừa Việt Nam kiến tạo tương lai xanh - số hóa.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-              {/* Thẻ Mục Tiêu */}
+            {/* Mục tiêu + Đối tượng tham gia */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16">
+              {/* Mục tiêu */}
               <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                 <Target className="w-12 h-12 text-yellow-300 mb-6" />
                 <h3 className="text-2xl font-bold text-white mb-4">Mục Tiêu</h3>
                 <p className="text-lg text-white leading-relaxed">
-                  Tăng cường năng lực cạnh tranh cho DNNVV Việt Nam dựa trên việc sử dụng năng lượng và nguồn lực đầu vào hiệu quả thông qua chuyển đổi số và chuyển đổi xanh hướng tới giảm phát thải, phát triển bền vững.
+                  Chương trình Twin Transition Challenge hướng tới việc tìm kiếm và tôn vinh các doanh nghiệp sản xuất nhỏ và vừa (SMEs) Việt Nam đã và đang áp dụng mô hình chuyển đổi kép (số và xanh) trong 3 lĩnh vực: Chế biến nông sản, Chế biến giấy và gỗ, Dệt may và Da giày, nhằm tối ưu hóa sử dụng năng lượng và tài nguyên, hướng đến việc giảm phát thải, và phát triển bền vững.
                 </p>
+                <div className="bg-white/20 mt-6 p-4 rounded-lg border border-white/30">
+                  <h3 className="text-2xl font-bold text-yellow-300 mb-4">Đối tượng tham gia:</h3>
+                  <p className="text-lg text-white leading-relaxed mb-6">
+                    Để tham gia chương trình, các doanh nghiệp cần đáp ứng các tiêu chí sau đây:
+                  </p>
+                  <ul className="space-y-4 text-white">
+                    {[
+                      "Số lao động có tham gia bảo hiểm xã hội bình quân năm: Không quá 200 lao động",
+                      "Doanh thu: Doanh thu hàng năm không vượt quá 200 tỷ VNĐ"
+                    ].map((text, i) => (
+                      <li key={i} className="flex gap-3 text-lg">
+                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
+                        <span className="leading-relaxed">{text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <ul className="space-y-4 mt-4 text-lg text-white">
+                    {[
+                      "Các công ty do phụ nữ làm chủ được khuyến khích đặc biệt.",
+                      "Cuộc thi tập trung vào các doanh nghiệp nhỏ và vừa hoạt động trong ba lĩnh vực ưu tiên: Chế biến nông sản, Dệt may và da giày, Chế biến gỗ và giấy"
+                    ].map((text, i) => (
+                      <li key={i}>{text}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              {/* Thẻ Đối tượng tham gia */}
+              {/* Định nghĩa Mô hình chuyển đổi kép */}
               <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                 <Target className="w-12 h-12 text-blue-500 mb-6" />
-                <h3 className="text-2xl font-bold text-black mb-4">Đối tượng tham gia</h3>
+                <h3 className="text-2xl font-bold text-black mb-4">Định nghĩa Mô hình chuyển đổi kép</h3>
                 <p className="text-lg text-black leading-relaxed mb-6">
-                  Doanh nghiệp là doanh nghiệp nhỏ và vừa Việt Nam theo tiêu chuẩn sau:
+                  Là quá trình diễn ra đồng thời và gắn kết giữa chuyển đổi số và chuyển đổi xanh trong các ngành công nghiệp, nền kinh tế và xã hội. Mục tiêu là tận dụng công nghệ số để thúc đẩy phát triển bền vững, đồng thời giảm thiểu tác động tiêu cực của chính công nghệ đến khí hậu và môi trường, hướng tới một tương lai tiết kiệm năng lượng, tài nguyên và thân thiện môi trường.
                 </p>
-
-                <ul className="space-y-4">
-                  {/* List có CheckCircle */}
-                  {[
-                    "Số lao động có tham gia bảo hiểm xã hội bình quân năm: Không quá 200 lao động",
-                    "Doanh thu: Doanh thu hàng năm không vượt quá 200 tỷ VNĐ"
-                  ].map((text, i) => (
-                    <li key={i} className="grid grid-cols-[auto_1fr] gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-1" />
-                      <span dangerouslySetInnerHTML={{ __html: text }} />
-                    </li>
-                  ))}
-                </ul>
-
-                <ul className="space-y-4 mt-4">
-                  {/* List không có CheckCircle */}
-                  {[
-                    "Doanh nghiệp có mô hình chuyển đổi kép (chuyển đổi số và xanh) đang hoặc đã triển khai",
-                    "Các công ty do phụ nữ làm chủ được khuyến khích đặc biệt.",
-                    "Cuộc thi tập trung vào các doanh nghiệp nhỏ và vừa hoạt động trong ba lĩnh vực ưu tiên Chế biến nông sản, Dệt may và da giày, Chế biến gỗ và giấy"
-                  ].map((text, i) => (
-                    <li key={i} className="grid grid-cols-1 gap-3 text-lg">
-                      <span dangerouslySetInnerHTML={{
-                        __html: text.includes("công ty") || text.includes("ba lĩnh vực")
-                          ? text.replace(/(công ty|ba lĩnh vực)/g, `<b class="text-blue-500">$1</b>`)
-                          : text
-                      }} />
-                    </li>
-                  ))}
+                <ul className="list-disc list-inside text-black">
+                  <li className="my-5">
+                    <b>Chuyển đổi số:</b> Đề cập đến việc ứng dụng công nghệ tiên tiến, phân tích dữ liệu và công cụ số nhằm nâng cao hiệu quả vận hành, tăng tính minh bạch và tối ưu hóa sử dụng tài nguyên. Khái niệm bao gồm các thực hành như nâng cao hiệu quả năng lượng, quản lý tuần hoàn tài nguyên, và số hóa quy trình.
+                  </li>
+                  <li>
+                    <b>Chuyển đổi xanh:</b> Tập trung vào tận dụng giải pháp số để đạt mục tiêu phát triển bền vững và bao trùm xã hội. Khái niệm này bao gồm giảm phát thải carbon, tăng hiệu quả sử dụng năng lượng và tài nguyên, đồng thời giảm thiểu tác động môi trường (Ví dụ: Trung tâm dữ liệu tiết kiệm năng lượng).
+                  </li>
                 </ul>
               </div>
             </div>
 
-            {/* Grid industries */}
-            <div className="grid grid-cols-3 gap-4 mb-16">
+            {/* Hình minh họa 3 lĩnh vực */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16">
               {industries.map((industry, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-500/10 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20 flex flex-col items-center"
-                >
-                  <img
-                    src={industry.image}
-                    className="h-16 sm:h-24 lg:h-48 w-auto object-contain mb-2"
-                  />
+                <div key={index} className="bg-gray-500/10 backdrop-blur-md rounded-xl p-4 flex flex-col items-center border border-white/20">
+                  <img src={industry.image} className="h-16 sm:h-24 lg:h-48 w-auto object-contain mb-2" />
                   <h3 className="text-xs sm:text-lg font-semibold text-center">{industry.label}</h3>
                 </div>
               ))}
             </div>
           </div>
         </div>
-      </section >
+      </section>
+
+
+
 
       {/* Prizes Section */}
       <Slide direction="up" triggerOnce >
@@ -375,7 +375,7 @@ function App() {
             </div>
           </div>
         </section>
-      </Slide>
+      </Slide >
 
       {/* Timeline Section */}
       <Fade triggerOnce >
