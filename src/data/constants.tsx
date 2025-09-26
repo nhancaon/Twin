@@ -46,20 +46,17 @@ export const faqs = [
         title: "Giới thiệu doanh nghiệp",
       },
       {
-        title: "Mô hình doanh nghiệp",
+        title: "Mô hình kinh doanh",
       },
       {
-        title: "Giới thiệu về mô hình chuyển đổi xanh và số của doanh nghiệp",
+        title: "Giới thiệu về mô hình chuyển đổi kép của doanh nghiệp:",
         subAnswer: [
           "Hiện trạng",
           "Xác định vấn đề",
-          "Mô hình chuyển đổi xanh và số",
-          "Kết quả/ tác động dự kiến (liên quan đến tài nguyên, năng lượng, phát thải carbon)",
-          "Kế hoạch trong 3 năm tới: Bao gồm các mốc thời gian cụ thể và các nguồn lực sử dụng",
+          "Mô hình chuyển đổi kép",
+          "Kết quả/ tác động dự kiến/thực tế (liên quan đến tài nguyên, năng lượng, phát thải carbon)",
+          "Cách thức triển khai mô hình: Bao gồm các mốc thời gian cụ thể, các nguồn lực sử dụng và chứng minh được khả năng mở rộng hoặc nhân rộng mô hình, yếu tố bình đẳng giới khi thiết kế hoặc triển khai",
         ]
-      },
-      {
-        title: "Tác động đo lường được của mô hình: Có thể là tác động thực tế hoặc dự kiến",
       },
     ]
   },
@@ -95,20 +92,20 @@ export const rawTimeline = [
   {
     phase: "Giai đoạn 1",
     title: "Vòng nộp đơn",
-    date: "25/09/2025 - 08/10/2025",
+    date: "26/09/2025 - 08/10/2025",
     description: "Các doanh nghiệp sẽ hoàn thiện và gửi hồ sơ dự án chuyển đổi kép theo hướng dẫn.",
   },
   {
     phase: "Giai đoạn 2",
     title: "Phiên thông tin trực tuyến (Online Information Session)",
-    date: "26/09/2025",
-    description: "Giới thiệu chi tiết về mục tiêu, thể lệ và tiêu chí đánh giá cuộc thi. SMEs sẽ được hướng dẫn cách chuẩn bị hồ sơ, đồng thời giải đáp thắc mắc trực tiếp từ BTC.",
+    date: "30/09/2025",
+    description: "Phiên thông tin giải đáp chi tiết các thắc mắc cho các doanh nghiệp.",
   },
   {
     phase: "Giai đoạn 3",
     title: "Công bố kết quả vòng đơn",
     date: "12/10/2025",
-    description: "Danh sách Top 3-5 doanh nghiệp/ lĩnh vực.",
+    description: "Công bố danh sách các doanh nghiệp xuất sắc tham gia vòng thi Pitching.",
   },
   {
     phase: "Giai đoạn 4",

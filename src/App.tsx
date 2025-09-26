@@ -295,7 +295,7 @@ function App() {
                     "Cuộc thi tập trung vào các doanh nghiệp nhỏ và vừa hoạt động trong ba lĩnh vực ưu tiên Chế biến nông sản, Dệt may và da giày, Chế biến gỗ và giấy"
                   ].map((text, i) => (
                     <li key={i} className="grid grid-cols-[auto_1fr] gap-3">
-                      <CheckCircle className="w-5 h-5 text-black-300 mt-1" />
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-1" />
                       <span dangerouslySetInnerHTML={{ __html: text.includes("công ty") || text.includes("ba lĩnh vực") ? text.replace(/(công ty|ba lĩnh vực)/g, `<b class="text-blue-500">$1</b>`) : text }} />
                     </li>
                   ))}
