@@ -304,33 +304,31 @@ function App() {
                 Để tham gia chương trình, các doanh nghiệp cần đáp ứng các tiêu chí sau đây:
               </p>
               <ul className="space-y-4 text-black">
-                {[
-                  "Số lao động có tham gia bảo hiểm xã hội bình quân năm: Không quá 200 lao động",
-                  "Doanh thu: Doanh thu hàng năm không vượt quá 200 tỷ VNĐ"
-                ].map((text, i) => (
-                  <li key={i} className="flex gap-3 text-lg">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                    <span className="leading-relaxed">{text}</span>
-                  </li>
-                ))}
+                <li className="flex gap-3 text-lg">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
+                  <span className="leading-relaxed">
+                    Số lao động có tham gia bảo hiểm xã hội bình quân năm: Không quá 200 lao động
+                  </span>
+                </li>
+
+                {/* "hoặc" nổi bật ở giữa */}
+                <div className="text-left text-2xl font-bold text-blue-600">hoặc</div>
+
+                <li className="flex gap-3 text-lg">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
+                  <span className="leading-relaxed">
+                    Doanh thu: Doanh thu hàng năm không vượt quá 200 tỷ VNĐ
+                  </span>
+                </li>
               </ul>
+
               <ul className="space-y-4 mt-4 text-lg text-black">
                 {[
                   "Các công ty do phụ nữ làm chủ được khuyến khích đặc biệt.",
                   "Doanh nghiệp có mô hình chuyển đổi kép (chuyển đổi số và xanh) đang hoặc đã triển khai",
                   "Cuộc thi tập trung vào các doanh nghiệp nhỏ và vừa hoạt động trong ba lĩnh vực ưu tiên: Chế biến nông sản, Dệt may và da giày, Chế biến gỗ và giấy"
                 ].map((text, i) => (
-                  <li key={i}>
-                    {text.split(/(hoặc)/).map((part, idx) =>
-                      part === "hoặc" ? (
-                        <span key={idx} className="text-2xl font-bold text-red-600">
-                          {part}
-                        </span>
-                      ) : (
-                        part
-                      )
-                    )}
-                  </li>
+                  <li key={i}>{text}</li>
                 ))}
               </ul>
             </div>
