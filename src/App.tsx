@@ -3,6 +3,8 @@ import images from "./assets";
 import { prizes, faqs, rawTimeline, industries } from "./data/constants";
 import { Fade, Slide } from "react-awesome-reveal";
 import { motion } from "framer-motion";
+import Countdown from "react-countdown";
+
 import {
   ChevronRight,
   X,
@@ -29,6 +31,7 @@ interface FormData {
 function App() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [open, setOpen] = useState(false);
+  const deadline = new Date("2025-10-08T23:59:59");
 
 
   const getTimelineStatus = (dateString: string) => {
@@ -391,70 +394,125 @@ function App() {
 
       {/* Timeline Section */}
       <Fade triggerOnce >
-        <section id="timeline-section" className="py-10 bg-gradient-to-b from-gray-50 to-white">
+        <section id="timeline-section" className="py-12 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-6">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-10">
-                <h2 className="text-5xl font-extrabold text-gray-900 mb-2 tracking-tight">
-                  Lộ trình triển khai
-                </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Quy trình rõ ràng, minh bạch từ đăng ký đến trao giải
-                </p>
-              </div>
-              <div className="space-y-12">
+            <div className="max-w-7xl mx-auto">
+              {/* Grid layout */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
 
-                {timeline.map((item, index) => (
-                  <div key={index} className="relative flex items-start group">
-                    <div className="w-32 mr-6 text-lg font-semibold text-gray-500 tracking-wide text-left">
-                      {item.date}
-                    </div>
+                {/* Countdown bên trái */}
+                <div className="flex justify-center items-center h-full">
+                  <div className="flex flex-col items-center justify-center 
+            bg-gradient-to-r from-blue-600 to-green-600
+            rounded-2xl p-8 shadow-xl text-white w-full h-full">
+                    <p className="text-lg mb-2">Đếm ngược thời gian đóng đơn</p>
+                    <h2 className="text-3xl font-extrabold mb-8 tracking-wide text-center">
+                      ĐĂNG KÝ THAM GIA
+                    </h2>
 
-                    {/* Số thứ tự với gradient và bóng */}
-                    <div
-                      className={`w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl text-white z-10 flex-shrink-0 shadow-lg transition-transform duration-300 ${item.status === "active"
-                        ? "bg-gradient-to-tr from-blue-600 to-blue-400 group-hover:scale-110"
-                        : item.status === "completed"
-                          ? "bg-gradient-to-tr from-green-600 to-green-400 group-hover:scale-110"
-                          : "bg-gray-300"
-                        }`}
-                    >
-                      {item.status === "completed" ? (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-7 w-7"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={3}
+                    <Countdown
+                      date={deadline}
+                      renderer={({ days, hours, minutes, seconds, completed }) => {
+                        if (completed) {
+                          return (
+                            <div className="text-xl font-bold text-red-500">
+                              Hết hạn nộp đơn
+                            </div>
+                          );
+                        }
+
+                        const boxes = [
+                          { label: "Ngày", value: days },
+                          { label: "Giờ", value: hours },
+                          { label: "Phút", value: minutes },
+                          { label: "Giây", value: seconds },
+                        ];
+
+                        return (
+                          <div className="flex gap-6 mb-6">
+                            {boxes.map((box, idx) => (
+                              <div
+                                key={idx}
+                                className="flex flex-col items-center bg-gradient-to-r from-orange-400 to-yellow-400 
+                        text-white rounded-lg px-10 py-5 shadow-md min-w-[80px]"
+                              >
+                                <div className="text-4xl font-extrabold">
+                                  {String(box.value).padStart(2, "0")}
+                                </div>
+                                <div className="text-sm mt-1">{box.label}</div>
+                              </div>
+                            ))}
+                          </div>
+                        );
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* Timeline bên phải */}
+                <div className="flex flex-col justify-center h-full">
+                  <div className="text-center mb-8">
+                    <h2 className="text-3xl font-extrabold text-gray-900 mb-3 tracking-tight">
+                      Lộ trình triển khai
+                    </h2>
+                    <p className="text-base text-gray-600">
+                      Quy trình rõ ràng, minh bạch từ đăng ký đến trao giải
+                    </p>
+                  </div>
+
+                  <div className="space-y-10">
+                    {timeline.map((item, index) => (
+                      <div key={index} className="relative flex items-start group">
+                        <div className="w-28 mr-4 text-base font-semibold text-gray-500 tracking-wide text-left leading-snug line-clamp-2">
+                          {item.date}
+                        </div>
+
+                        <div
+                          className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-base text-white 
+                    z-10 flex-shrink-0 shadow-md transition-transform duration-300 ${item.status === "active"
+                              ? "bg-gradient-to-tr from-blue-600 to-blue-400 group-hover:scale-110"
+                              : item.status === "completed"
+                                ? "bg-gradient-to-tr from-green-600 to-green-400 group-hover:scale-110"
+                                : "bg-gray-300"
+                            }`}
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                      ) : (
-                        index + 1
-                      )}
-                    </div>
-                    {/* Nội dung chính */}
-                    <div className="ml-10 flex-1 bg-white p-8 rounded-2xl shadow-xl border border-gray-100 transition-shadow duration-300 group-hover:shadow-2xl">
-                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                        <div className="flex-1">
+                          {item.status === "completed" ? (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-5 w-5"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              strokeWidth={3}
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                          ) : (
+                            index + 1
+                          )}
+                        </div>
 
-                          <h3 className="text-3xl font-extrabold text-gray-900 mb-3 leading-tight">
+                        <div className="ml-5 flex-1 bg-white p-5 rounded-xl shadow-md border border-gray-100 transition-shadow duration-300 group-hover:shadow-lg">
+                          <h3 className="text-xl font-extrabold text-gray-900 mb-2 leading-tight">
                             {item.title}
                           </h3>
-                          <p className="text-gray-700 text-lg leading-relaxed">
+                          <p className="text-gray-700 text-base leading-relaxed">
                             {item.description}
                           </p>
                         </div>
 
+                        {index < timeline.length - 1 && (
+                          <div className="absolute left-6 top-14 w-1 bg-gray-300 rounded-full h-16"></div>
+                        )}
                       </div>
-                    </div>
-                    {/* Đường nối giữa các bước */}
-                    {index < timeline.length - 1 && (
-                      <div className="absolute left-8 top-20 w-1 bg-gray-300 rounded-full h-20"></div>
-                    )}
+                    ))}
                   </div>
-                ))}
+                </div>
+
               </div>
             </div>
           </div>
