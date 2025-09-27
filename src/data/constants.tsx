@@ -90,34 +90,39 @@ export const faqs = [
 
 export const rawTimeline = [
   {
-    // phase: "Giai đoạn 1",
     title: "Vòng nộp đơn",
     date: "26/09/2025 - 08/10/2025",
-    description: "Các doanh nghiệp sẽ hoàn thiện và gửi hồ sơ dự án chuyển đổi kép theo hướng dẫn.",
+    description:
+      "Các doanh nghiệp sẽ hoàn thiện và gửi hồ sơ dự án chuyển đổi kép theo hướng dẫn.",
+    deadline: "2025-10-08T23:59:59", // hết hạn nộp đơn
   },
   {
-    // phase: "Giai đoạn 2",
     title: "Phiên thông tin trực tuyến (Online Information Session)",
     date: "30/09/2025",
-    description: "Phiên thông tin giải đáp chi tiết các thắc mắc cho các doanh nghiệp.",
+    description:
+      "Phiên thông tin giải đáp chi tiết các thắc mắc cho các doanh nghiệp.",
+    deadline: "2025-09-30T23:59:59", // diễn ra trong ngày
   },
   {
-    // phase: "Giai đoạn 3",
     title: "Công bố kết quả vòng đơn",
     date: "12/10/2025",
-    description: "Công bố danh sách các doanh nghiệp xuất sắc tham gia vòng thi Pitching.",
+    description:
+      "Công bố danh sách các doanh nghiệp xuất sắc tham gia vòng thi Pitching.",
+    deadline: "2025-10-12T23:59:59",
   },
   {
-    // phase: "Giai đoạn 4",
     title: "Phiên định hướng & hoạt động mentoring 1-1",
     date: "13/10/2025 - 20/10/2025",
-    description: "Các doanh nghiệp lọt vào danh sách sẽ nhận phản hồi và hướng dẫn để chuẩn bị cho bài pitching.",
+    description:
+      "Các doanh nghiệp lọt vào danh sách sẽ nhận phản hồi và hướng dẫn để chuẩn bị cho bài pitching.",
+    deadline: "2025-10-20T23:59:59",
   },
   {
-    // phase: "Giai đoạn 5",
     title: "Vòng thi Pitching",
     date: "22/10/2025",
-    description: "Top 6 doanh nghiệp trực tiếp trình bày trước hội đồng đánh giá",
+    description:
+      "Top 6 doanh nghiệp trực tiếp trình bày trước hội đồng đánh giá",
+    deadline: "2025-10-22T23:59:59",
   },
 ];
 

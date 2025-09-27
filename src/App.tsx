@@ -30,6 +30,7 @@ function App() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [open, setOpen] = useState(false);
 
+
   const getTimelineStatus = (dateString: string) => {
     const currentDate = new Date();
     const dateParts = dateString.split(" ")[0].split("/");
@@ -235,7 +236,6 @@ function App() {
 
 
       {/* About Project Section */}
-      {/* About Project Section */}
       <section id="about" className="relative bg-gray-50 pt-12 sm:pt-20 lg:pt-32">
         {/* Wave nằm trên cùng */}
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
@@ -298,49 +298,49 @@ function App() {
               </div>
             </div>
 
-            <div className="bg-white mt-2 p-4 rounded-lg border border-white mb-5">
-              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Đối tượng tham gia:</h3>
-              <p className="text-lg text-black leading-relaxed mb-4">
-                Để tham gia chương trình, các doanh nghiệp cần đáp ứng các tiêu chí sau đây:
+            <div className="bg-white p-2 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl text-center">
+              <h3 className="text-3xl font-bold text-yellow-400 mb-4">
+                Đối tượng tham gia:
+              </h3>
+              <p className="text-2xl text-black leading-relaxed mb-6">
+                Doanh nghiệp nhỏ và vừa Việt Nam đáp ứng 1 trong 2 tiêu chuẩn sau:
               </p>
-              <ul className="space-y-4 text-black">
-                <li className="flex gap-3 text-lg">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <span className="leading-relaxed">
-                    Số lao động có tham gia bảo hiểm xã hội bình quân năm: Không quá 200 lao động
-                  </span>
-                </li>
-
-                {/* "hoặc" nổi bật ở giữa */}
-                <div className="text-left text-2xl font-bold text-blue-600">hoặc</div>
-
-                <li className="flex gap-3 text-lg">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <span className="leading-relaxed">
-                    Doanh thu: Doanh thu hàng năm không vượt quá 200 tỷ VNĐ
-                  </span>
-                </li>
-              </ul>
-
-              <ul className="space-y-4 mt-4 text-lg text-black">
-                {[
-                  "Các công ty do phụ nữ làm chủ được khuyến khích đặc biệt.",
-                  "Doanh nghiệp có mô hình chuyển đổi kép (chuyển đổi số và xanh) đang hoặc đã triển khai",
-                  "Cuộc thi tập trung vào các doanh nghiệp nhỏ và vừa hoạt động trong ba lĩnh vực ưu tiên: Chế biến nông sản, Dệt may và da giày, Chế biến gỗ và giấy"
-                ].map((text, i) => (
-                  <li key={i}>{text}</li>
-                ))}
-              </ul>
+              {/* Hai tiêu chuẩn + HOẶC */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-10 text-lg">
+                <div className="rounded-md p-6 w-full sm:w-1/3 text-center border border-blue-500 border-4 shadow-sm">
+                  Không quá 200 lao động có tham gia bảo hiểm xã hội bình quân năm
+                </div>
+                <div className="text-2xl font-bold text-blue-600">HOẶC</div>
+                <div className="rounded-md p-6 w-full sm:w-1/3 text-center border border-blue-500 border-4 shadow-sm">
+                  Doanh thu hàng năm không vượt quá 200 tỷ VNĐ
+                </div>
+              </div>
             </div>
-
+            <div className="text-xl font-bold text-black rounded-md p-6 w-full text-center mb-2">
+              Cuộc thi tập trung vào các doanh nghiệp nhỏ và vừa hoạt động trong ba lĩnh vực ưu tiên
+            </div>
             {/* Hình minh họa 3 lĩnh vực */}
-            <div className="flex flex-row gap-6 mb-16 justify-center">
+            <div className="flex flex-row gap-6 mb-2 justify-center">
               {industries.map((industry, index) => (
                 <div key={index} className="bg-gray-500/10 backdrop-blur-md rounded-xl p-4 flex flex-col items-center border border-white/20">
                   <img src={industry.image} className="h-16 sm:h-24 lg:h-48 w-auto object-contain mb-2" />
                   <h3 className="text-xs sm:text-lg font-semibold text-center">{industry.label}</h3>
                 </div>
               ))}
+            </div>
+            <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl text-center m-4">
+              <h3 className="text-2xl font-bold text-yellow-200 mb-6">
+                Bên cạnh đó các doanh nghiệp nhỏ và vừa cần chú ý:
+              </h3>
+
+              <ul className="list-disc list-outside pl-6 space-y-4 text-lg text-white text-left max-w-2xl mx-auto leading-relaxed">
+                {[
+                  "Doanh nghiệp có mô hình chuyển đổi kép (chuyển đổi số và xanh) đang hoặc đã triển khai",
+                  "Các công ty do phụ nữ làm chủ được khuyến khích đặc biệt.",
+                ].map((text, i) => (
+                  <li key={i}>{text}</li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -403,8 +403,13 @@ function App() {
                 </p>
               </div>
               <div className="space-y-12">
+
                 {timeline.map((item, index) => (
                   <div key={index} className="relative flex items-start group">
+                    <div className="w-32 mr-6 text-lg font-semibold text-gray-500 tracking-wide text-left">
+                      {item.date}
+                    </div>
+
                     {/* Số thứ tự với gradient và bóng */}
                     <div
                       className={`w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl text-white z-10 flex-shrink-0 shadow-lg transition-transform duration-300 ${item.status === "active"
@@ -423,11 +428,7 @@ function App() {
                           stroke="currentColor"
                           strokeWidth={3}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
                       ) : (
                         index + 1
@@ -437,16 +438,7 @@ function App() {
                     <div className="ml-10 flex-1 bg-white p-8 rounded-2xl shadow-xl border border-gray-100 transition-shadow duration-300 group-hover:shadow-2xl">
                       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                         <div className="flex-1">
-                          {/* <span
-                            className={`inline-block px-4 py-1 rounded-full text-sm font-semibold mb-3 tracking-wide ${item.status === "active"
-                              ? "bg-blue-100 text-blue-700"
-                              : item.status === "completed"
-                                ? "bg-green-100 text-green-700"
-                                : "bg-gray-100 text-gray-500"
-                              }`}
-                          >
-                            {item.phase}
-                          </span> */}
+
                           <h3 className="text-3xl font-extrabold text-gray-900 mb-3 leading-tight">
                             {item.title}
                           </h3>
@@ -454,9 +446,7 @@ function App() {
                             {item.description}
                           </p>
                         </div>
-                        <div className="mt-6 lg:mt-0 text-lg font-semibold text-gray-500 tracking-wide min-w-[120px] text-right">
-                          {item.date}
-                        </div>
+
                       </div>
                     </div>
                     {/* Đường nối giữa các bước */}
