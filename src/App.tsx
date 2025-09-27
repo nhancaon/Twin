@@ -429,7 +429,7 @@ function App() {
                         ];
 
                         return (
-                          <div className="flex gap-6 mb-6">
+                          <div className="flex flex-wrap justify-center gap-4 mb-6">
                             {boxes.map((box, idx) => (
                               <div
                                 key={idx}
