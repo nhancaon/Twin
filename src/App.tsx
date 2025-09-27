@@ -259,7 +259,7 @@ function App() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             {/* Title */}
-            <div className="text-center mb-12">
+            <div className="text-center mb-5">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
                 Về Cuộc thi{" "}
                 <span className="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent">
@@ -272,11 +272,11 @@ function App() {
             </div>
 
             {/* Mục tiêu + Đối tượng tham gia */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-1 gap-8 mb-16">
               {/* Mục tiêu */}
               <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                <Target className="w-12 h-12 text-yellow-300 mb-6" />
-                <h3 className="text-2xl font-bold text-white mb-4">Giới thiệu chương trình</h3>
+                <Target className="w-12 h-12 text-yellow-300 mb-6 mx-auto" />
+                <h3 className="text-2xl font-bold text-white mb-4 text-center">Giới thiệu chương trình</h3>
                 <p className="text-lg text-white leading-relaxed text-justify">
                   Chương trình Twin Transition Challenge hướng tới việc tìm kiếm và tôn vinh các doanh nghiệp sản xuất nhỏ và vừa (SMEs) Việt Nam đã và đang áp dụng mô hình chuyển đổi kép (số và xanh) trong 3 lĩnh vực: Chế biến nông sản, Chế biến giấy và gỗ, Dệt may và Da giày, nhằm tối ưu hóa sử dụng năng lượng và tài nguyên, hướng đến việc giảm phát thải, và phát triển bền vững.
                 </p>
@@ -285,19 +285,31 @@ function App() {
 
               {/* Định nghĩa Mô hình chuyển đổi kép */}
               <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-                <Target className="w-12 h-12 text-blue-500 mb-6" />
-                <h3 className="text-2xl font-bold text-black mb-4">Mô hình chuyển đổi kép là gì?</h3>
+                <h3 className="text-2xl font-bold text-black mb-4 text-center">Mô hình chuyển đổi kép là gì?</h3>
                 <p className="text-lg text-black leading-relaxed mb-6 text-justify">
                   Là quá trình diễn ra đồng thời và gắn kết giữa chuyển đổi số và chuyển đổi xanh trong các ngành công nghiệp, nền kinh tế và xã hội. Mục tiêu là tận dụng công nghệ số để thúc đẩy phát triển bền vững, đồng thời giảm thiểu tác động tiêu cực của chính công nghệ đến khí hậu và môi trường, hướng tới một tương lai tiết kiệm năng lượng, tài nguyên và thân thiện môi trường.
                 </p>
-                <ul className="list-disc list-inside text-black">
-                  <li className="my-5 text-justify">
-                    <b>Chuyển đổi số:</b> Đề cập đến việc ứng dụng công nghệ tiên tiến, phân tích dữ liệu và công cụ số nhằm nâng cao hiệu quả vận hành, tăng tính minh bạch và tối ưu hóa sử dụng tài nguyên. Khái niệm bao gồm các thực hành như nâng cao hiệu quả năng lượng, quản lý tuần hoàn tài nguyên, và số hóa quy trình.
-                  </li>
-                  <li className="text-justify">
-                    <b>Chuyển đổi xanh:</b> Tập trung vào tận dụng giải pháp số để đạt mục tiêu phát triển bền vững và bao trùm xã hội. Khái niệm này bao gồm giảm phát thải carbon, tăng hiệu quả sử dụng năng lượng và tài nguyên, đồng thời giảm thiểu tác động môi trường (Ví dụ: Trung tâm dữ liệu tiết kiệm năng lượng).
-                  </li>
-                </ul>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16">
+              {/* Mục tiêu */}
+              <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <h3 className="text-2xl font-bold text-yellow-300 mb-4 text-center">Chuyển đổi số</h3>
+                <p className="text-lg text-white leading-relaxed text-justify">
+                  Đề cập đến việc ứng dụng công nghệ tiên tiến, phân tích dữ liệu và công cụ số nhằm nâng cao hiệu quả vận hành, tăng tính minh bạch và tối ưu hóa sử dụng tài nguyên. Khái niệm bao gồm các thực hành như nâng cao hiệu quả năng lượng, quản lý tuần hoàn tài nguyên, và số hóa quy trình.
+                </p>
+              </div>
+
+              {/* Định nghĩa Mô hình chuyển đổi kép */}
+              <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                <h3 className="text-2xl font-bold text-yellow-300 mb-4 text-center">Chuyển đổi xanh</h3>
+                <p className="text-lg text-white text-black leading-relaxed mb-6 text-justify">
+                  Tập trung vào tận dụng giải pháp số để đạt mục tiêu phát triển bền vững và bao trùm xã hội. Khái niệm này bao gồm giảm phát thải carbon, tăng hiệu quả sử dụng năng lượng và tài nguyên, đồng thời giảm thiểu tác động môi trường.
+                </p>
+                <p className="text-lg text-black leading-relaxed mb-6 text-justify text-white">
+                  (Ví dụ: Trung tâm dữ liệu tiết kiệm năng lượng).
+                </p>
               </div>
             </div>
 
