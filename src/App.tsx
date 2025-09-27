@@ -276,7 +276,7 @@ function App() {
               {/* Mục tiêu */}
               <div className="bg-gradient-to-r from-blue-600 to-green-600 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                 <Target className="w-12 h-12 text-yellow-300 mb-6" />
-                <h3 className="text-2xl font-bold text-white mb-4">Mục Tiêu</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Giới thiệu chương trình</h3>
                 <p className="text-lg text-white leading-relaxed text-justify">
                   Chương trình Twin Transition Challenge hướng tới việc tìm kiếm và tôn vinh các doanh nghiệp sản xuất nhỏ và vừa (SMEs) Việt Nam đã và đang áp dụng mô hình chuyển đổi kép (số và xanh) trong 3 lĩnh vực: Chế biến nông sản, Chế biến giấy và gỗ, Dệt may và Da giày, nhằm tối ưu hóa sử dụng năng lượng và tài nguyên, hướng đến việc giảm phát thải, và phát triển bền vững.
                 </p>
@@ -286,7 +286,7 @@ function App() {
               {/* Định nghĩa Mô hình chuyển đổi kép */}
               <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
                 <Target className="w-12 h-12 text-blue-500 mb-6" />
-                <h3 className="text-2xl font-bold text-black mb-4">Định nghĩa Mô hình chuyển đổi kép</h3>
+                <h3 className="text-2xl font-bold text-black mb-4">Mô hình chuyển đổi kép là gì?</h3>
                 <p className="text-lg text-black leading-relaxed mb-6 text-justify">
                   Là quá trình diễn ra đồng thời và gắn kết giữa chuyển đổi số và chuyển đổi xanh trong các ngành công nghiệp, nền kinh tế và xã hội. Mục tiêu là tận dụng công nghệ số để thúc đẩy phát triển bền vững, đồng thời giảm thiểu tác động tiêu cực của chính công nghệ đến khí hậu và môi trường, hướng tới một tương lai tiết kiệm năng lượng, tài nguyên và thân thiện môi trường.
                 </p>
