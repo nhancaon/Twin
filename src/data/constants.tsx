@@ -7,10 +7,19 @@ export const prizes = [
     title: "Giải thưởng",
     description: (
       <div>
-        <ul className="list-disc ml-2">
-          <li>Champion: 150.000.000</li>
-          <li>Á quân: 50.000.000</li>
-          <li>SMEs pitching: 4 x 40.000.000</li>
+        <ul className="list-disc ml-2 text-center">
+          <li>
+            <span className="font-bold text-lg text-yellow-300">Champion</span> <br />
+            150.000.000
+          </li>
+          <li>
+            <span className="font-bold text-lg text-yellow-300">Á quân</span> <br />
+            50.000.000
+          </li>
+          <li>
+            <span className="font-bold text-lg text-yellow-300">4 Quý quân</span> <br />
+            10.000.000/doanh nghiệp
+          </li>
         </ul>
       </div>
     ),
@@ -82,7 +91,7 @@ export const faqs = [
       [
         "Đào tạo quản lý dữ liệu vận hành [Dự kiến: Tháng 11/2025 – Tháng 2/2026]",
         "Huấn luyện 1:1 về hạ tầng dữ liệu và báo cáo [Dự kiến: Tháng 11/2025 – Tháng 2/2026]",
-        "[Ưu tiên] Huấn luyện 1:1 về phát triển kế hoạch hành động [Dự kiến: Tháng 1/2026 – Tháng 4/2026]",
+        "[Ưu tiên] Huấn luyện 1:1 về phát triển kế hoạch hành động [Dự kiến: Trong năm 2026]",
       ],
   },
 

@@ -327,7 +327,7 @@ function App() {
                 </div>
                 <div className="text-2xl font-bold text-blue-600">HOẶC</div>
                 <div className="rounded-md p-6 w-full sm:w-1/3 text-center border border-blue-500 border-4 shadow-sm">
-                  Doanh thu hàng năm không vượt quá 200 tỷ VNĐ
+                  Tổng doanh thu năm không vượt quá 200 tỷ VND
                 </div>
               </div>
             </div>
